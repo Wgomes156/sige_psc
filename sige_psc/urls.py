@@ -1,5 +1,5 @@
 """
-URL configuration for datapsc project.
+URL configuration for sige_psc project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.0/topics/http/urls/
