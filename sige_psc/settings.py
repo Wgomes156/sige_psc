@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-1@4uq&&vb2g!3^v_r1amnuf45b6ybhx48ept6h7f&cp)2&g(wp
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 
 # Application definition
 
