@@ -6,4 +6,3 @@ class User(AbstractUser):
     telefone = models.CharField(max_length=100,default="0")
     pass
 
-
