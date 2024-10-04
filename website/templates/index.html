@@ -52,7 +52,11 @@ SIGE  - SISTEMEA DE GERENCIAMENTO DA PSC
 <a href="adm">Adm</a>
 <a href="cadastros">Cadastros</a>
 </div>
+{% if user.is_authenticated %}
 usuario: {{user}}
+{% else%}
+<a href="/login"><button> faça o seu login</button></a>
+{%endif%}
 </header>
 <h1>
     <div style="color:rgb(0, 21, 255)">Somando Experiência.</div>

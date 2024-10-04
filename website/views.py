@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, HttpResponse
 from django.contrib.auth import authenticate, login
-
+from .forms import UserForm
 
 # Create your views here.
 def index(request):
@@ -21,3 +21,9 @@ def loginview(request):
         return redirect("index")
     else:
         return HttpResponse("invalid credentials", status=401)
+    
+def create_user(request):
+    if request.method =="GET":
+        return render(request,"create_user.html", {"form": UserForm(request.GET)})
+    
+
