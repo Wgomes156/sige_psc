@@ -25,5 +25,11 @@ def loginview(request):
 def create_user(request):
     if request.method =="GET":
         return render(request,"create_user.html", {"form": UserForm(request.GET)})
-    
+    elif request.method=="POST":
+        form=UserForm(request.POST)
+        if form.is_valid():
+            form.instance.set_password(form.cleaned_data["password"])
+            form.save()
+            return HttpResponse("Usuário criado com sucesso")
+    return render(request,"create_user.html", {"form":form })
 
