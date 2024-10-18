@@ -1,63 +1,5 @@
-<html>
-<head>
-<title>
-SIGE  - SISTEMEA DE GERENCIAMENTO DA PSC
-</title>
-<style>
-    *{font-family: Arial, Helvetica, sans-serif;
-
-    }
-    #links-redes-sociais{
-        height: 40px;
-        background-color: #022946;
-        text-align: right;
-    }
-    #links-redes-sociais>a{
-        margin: 20px;
-        color: white;
-        font-size: 18px;
-    }
-    #menu-pagina{
-        height: 80px;
-        padding-top: 10px;
-    }
-
-    #menu-pagina>a{
-        color: #7a7a7a;
-        text-decoration: none;
-        margin: 5px;
-        
-        }
-    .menu-iten-selecionado{
-        color: black !important;
-        text-decoration: underline !important;
-    }
-.descricao{
-    font-size: 20px;
-    max-width: 60%;
-    padding-top: 20px;
-}
-</style>
-</head>
-<body>
-<header>
-<div id="links-redes-sociais">
-    <a href="http://linkedin.com/company/psc-service/">linkedin</a>
-    <a href="#">Instagram</a>
-</div>
-<div id="menu-pagina">
-<a href="psc-service"><img src="/static/img/1.jpg"> Sistema de Gerenciamento</a>
-<a href="home" class="menu-iten-selecionado">Home</a>
-<a href="cliente">Cliente</a>
-<a href="adm">Adm</a>
-<a href="cadastros">Cadastros</a>
-</div>
-{% if user.is_authenticated %}
-usuario: {{user}}
-{% else%}
-<a href="/login"><button> faça o seu login</button></a>
-{%endif%}
-</header>
+{% extends "base.html" %}
+{%block content%}
 <h1>
     <div style="color:rgb(0, 21, 255)">Somando Experiência.</div>
 <div style="color:orange">Alcançando Metas.</div>
@@ -66,5 +8,4 @@ usuario: {{user}}
 Nossa abordagem é centrada nas necessidades do cliente,
 possibilitando resultados consistentes e alinhados aos seus objetivos imediatos.
 </p>
-</body>
-</html>
+{%endblock content%}

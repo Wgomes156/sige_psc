@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, HttpResponse
 from django.contrib.auth import authenticate, login
-from .forms import UserForm
+from .forms import UserForm, CreateUserForm
+from .models import User 
 
 # Create your views here.
 def index(request):
@@ -24,7 +25,7 @@ def loginview(request):
     
 def create_user(request):
     if request.method =="GET":
-        return render(request,"create_user.html", {"form": UserForm(request.GET)})
+        return render(request,"create_user.html", {"form": UserForm()})
     elif request.method=="POST":
         form=UserForm(request.POST)
         if form.is_valid():
@@ -33,3 +34,14 @@ def create_user(request):
             return HttpResponse("Usuário criado com sucesso")
     return render(request,"create_user.html", {"form":form })
 
+def create_user_adm(request):
+    if request.method =="GET":
+        return render(request,"create_user.html", {"form":CreateUserForm()})
+    elif request.method=="POST":
+        form=CreateUserForm(request.POST)
+        if form.is_valid():
+            password=(User.objects.make_random_password())
+            form.instance.set_password(password)
+            form.save()
+            return HttpResponse("Usuário criado com sucesso\nsenha do usuário: "+password)
+    return render(request,"create_user.html", {"form":form })

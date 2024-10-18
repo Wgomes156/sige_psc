@@ -9,7 +9,6 @@ class UserForm (forms.ModelForm):
     class Meta: 
         model = User
         fields = [
-            "username",
             "password",
             "first_name",
             "last_name",
@@ -22,3 +21,10 @@ class UserForm (forms.ModelForm):
         widgets={
             "data_nasc": DateInput()
         }
+
+class CreateUserForm (forms.ModelForm):
+    class Meta: 
+        model = User
+        fields = [
+            "email",
+                        ]
