@@ -6,5 +6,6 @@ urlpatterns = [
     path("login", views.loginview),
     path("criar-usuario", views.create_user, name="criar-usuario"),
     path("cadastros", views.create_user_adm),
+    
 ]
 
