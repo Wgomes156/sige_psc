@@ -9,17 +9,17 @@ def index(request):
 
 def loginview(request):
     if request.user.is_authenticated:
-        return redirect("index")
+        return redirect("criar-usuario")
     if request.method != "POST":
         return render(request, "login.html")
     
-    username = request.POST.get("username")
+    email = request.POST.get("email")
     password = request.POST.get("password")
-    user = authenticate(username=username, password=password)
+    user = authenticate(email=email, password=password)
 
     if user is not None:
         login(request, user)
-        return redirect("index")
+        return redirect("criar-usuario")
     else:
         return HttpResponse("invalid credentials", status=401)
     
