@@ -46,6 +46,7 @@ class User(AbstractUser):
     email = models.EmailField(("email address"), unique=True)
     username=None
 
+    foto_cadastro=models.ImageField(upload_to="Foto_cadastro", null=True)
     objects = CustomUserManager()
 
     def __str__(self):
