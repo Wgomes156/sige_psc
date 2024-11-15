@@ -10,3 +10,5 @@ urlpatterns = [
     
 ] + static("Foto_cadastro", document_root="Foto_cadastro")
 
+
+
