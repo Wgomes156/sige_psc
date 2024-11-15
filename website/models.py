@@ -51,3 +51,5 @@ class User(AbstractUser):
 
     def __str__(self):
         return self.email
+    def is_adm(self):
+        return self.groups.filter(name="adm").exists()

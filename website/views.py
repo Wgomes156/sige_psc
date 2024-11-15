@@ -3,6 +3,7 @@ from django.contrib.auth import authenticate, login
 from .forms import UserForm, CreateUserForm
 from .models import User 
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required, user_passes_test
 
 # Create your views here.
 def index(request):
@@ -36,6 +37,8 @@ def create_user(request):
             #return HttpResponse("Usuário criado com sucesso")
     return render(request,"create_user.html", {"form":form })
 
+@login_required
+@user_passes_test(lambda u: u.groups.filter(name='adm').exists())
 def create_user_adm(request):
     if request.method =="GET":
         return render(request,"create_user.html", {"form":CreateUserForm()})

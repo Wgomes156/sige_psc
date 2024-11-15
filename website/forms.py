@@ -10,7 +10,6 @@ class UserForm (forms.ModelForm):
         fields = [
             "first_name",
             "last_name",
-            "email",
             "telefone",
             "data_nasc",
             "dados_pix",
