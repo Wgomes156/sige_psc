@@ -23,7 +23,7 @@ def loginview(request):
         login(request, user)
         return redirect("criar-usuario")
     else:
-        return HttpResponse("invalid credentials", status=401)
+        return render(request, "login.html", context={"erro_message": "Usuário não cadastrado!"})
 
 @login_required
 def create_user(request):
@@ -50,3 +50,11 @@ def create_user_adm(request):
             form.save()
             return HttpResponse("Usuário criado com sucesso\nsenha do usuário: "+password)
     return render(request,"create_user.html", {"form":form })
+
+@login_required
+def foto_perfil(request):
+    if request.method=="GET":
+        if request.user.is_authenticated:
+            with request.user.foto_cadastro.open("r") as f:
+                return HttpResponse(f,content_type="image/jpg" )
+    return HttpResponse("error", status=401)

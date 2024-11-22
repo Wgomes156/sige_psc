@@ -39,6 +39,9 @@ SIGE  - SISTEMEA DE GERENCIAMENTO DA PSC
 .link-login {
     color:orange;  
 }
+#menu-usuario {
+    right:0;
+}
 </style>
 </head>
 <body>
@@ -48,18 +51,21 @@ SIGE  - SISTEMEA DE GERENCIAMENTO DA PSC
     <a href="#">Instagram</a>
 </div>
 <div id="menu-pagina">
-<a href="psc-service" class="link-menu"><img src="/static/img/1.jpg"> Sistema de Gerenciamento</a>
+<a href="psc-service" class="link-menu"><img src="/static/img/1.jpg"></a>
 <a href="/" class="menu-iten-selecionado">Home</a>
 <a href="/cliente" class="link-menu" >Cliente</a>
 <a href="/admin" class="link-menu">Adm</a>
 {%if user.is_adm%}
 <a href="/cadastros" class="link-menu">Cadastros</a>
 {%endif%}
-{% if user.is_authenticated %}
-usuario: {{user}}
-{% else%}
-<a href="/login" class="link-login"> <b>Login</b></a>
-{%endif%}
+<div id="menu-usuario">
+    {% if user.is_authenticated %}
+    usuario:{{user}}
+    <img src="{{user.foto_cadastro.url}}" width="128">
+    {% else%}
+    <a href="/login" class="link-login"> <b>Login</b></a>
+    {%endif%}
+</div>
 </div>
 </header>
 {%block content%}
