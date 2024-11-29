@@ -51,10 +51,10 @@ def create_user_adm(request):
             return HttpResponse("Usuário criado com sucesso\nsenha do usuário: "+password)
     return render(request,"create_user.html", {"form":form })
 
-@login_required
-def foto_perfil(request):
-    if request.method=="GET":
-        if request.user.is_authenticated:
-            with request.user.foto_cadastro.open("r") as f:
-                return HttpResponse(f,content_type="image/jpg" )
-    return HttpResponse("error", status=401)
+# @login_required
+# def foto_perfil(request):
+#     if request.method=="GET":
+#         if request.user.is_authenticated:
+#             with request.user.foto_cadastro.open("r") as f:
+#                 return HttpResponse(f,content_type="image/jpg" )
+#     return HttpResponse("error", status=401)
