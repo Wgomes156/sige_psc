@@ -47,8 +47,10 @@ class User(AbstractUser):
     username=None
 
     foto_cadastro=models.ImageField(upload_to="Foto_cadastro", null=True)
-    objects = CustomUserManager()
+    doc_pdf=models.FileField(upload_to="Documentos", null=True)
 
+    objects = CustomUserManager()
+    
     def __str__(self):
         return self.email
     def is_adm(self):

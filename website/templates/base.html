@@ -17,6 +17,10 @@ SIGE  - SISTEMEA DE GERENCIAMENTO DA PSC
         color: white;
         font-size: 18px;
     }
+    header{
+        display: flex;
+        justify-content: space-between; 
+        }
     #menu-pagina{
         height: 80px;
         padding-top: 10px;
@@ -40,16 +44,17 @@ SIGE  - SISTEMEA DE GERENCIAMENTO DA PSC
     color:orange;  
 }
 #menu-usuario {
-    right:0;
-}
+    display: flex;
+    flex-direction: column; 
+    }
 </style>
 </head>
 <body>
-<header>
 <div id="links-redes-sociais">
     <a href="http://linkedin.com/company/psc-service/">linkedin</a>
     <a href="#">Instagram</a>
 </div>
+<header>
 <div id="menu-pagina">
 <a href="psc-service" class="link-menu"><img src="/static/img/1.jpg"></a>
 <a href="/" class="menu-iten-selecionado">Home</a>
@@ -58,6 +63,7 @@ SIGE  - SISTEMEA DE GERENCIAMENTO DA PSC
 {%if user.is_adm%}
 <a href="/cadastros" class="link-menu">Cadastros</a>
 {%endif%}
+</div>
 <div id="menu-usuario">
     {% if user.is_authenticated %}
     usuario:{{user}}
@@ -65,7 +71,6 @@ SIGE  - SISTEMEA DE GERENCIAMENTO DA PSC
     {% else%}
     <a href="/login" class="link-login"> <b>Login</b></a>
     {%endif%}
-</div>
 </div>
 </header>
 {%block content%}

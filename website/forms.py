@@ -14,11 +14,17 @@ class UserForm (forms.ModelForm):
             "data_nasc",
             "dados_pix",
             "cpf",
-            "foto_cadastro"
+            "foto_cadastro",
+            "doc_pdf"
         ]
         widgets={
             "data_nasc": DateInput()
         }
+    # data_nasc = forms.DateField(
+    #     required=True,
+    #     input_formats=["%d/%m/%Y", "%Y-%m-%d"],
+    #     widget=DateInput()
+    # )
 
 class CreateUserForm (forms.ModelForm):
     class Meta: 
