@@ -1,0 +1,105 @@
+main #_1 {
+    background-color: #F8E1E1;
+    background-image: url(../img/banner_1.png);
+    background-position: center right;
+    background-size: cover;
+
+    & div {
+        min-height: 631px;
+        max-width: 1240px;
+
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
+
+main #_2 {
+    padding: 80px 0 80px 0;
+    width: 100%;
+}
+
+main #_2 #servicos {
+    text-align: center;
+}
+
+main #_2 div h2 {
+    margin-bottom: 12px;
+}
+
+main #_3 {
+    background-image: url(../img/banner_2.png);
+    background-position: center right;
+    background-size: cover;
+}
+
+main #_3 div {
+    min-height: 586px;
+}
+
+main #_4 {
+    padding: 100px 0 100px 0;
+}
+
+main #_4 h2 {
+    text-align: center;
+}
+
+main #_6 {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 80px 0px 80px 0px;
+
+    display: flex;
+    justify-content: center;
+}
+
+main #_6 div {
+    text-align: center;
+    width: 1140px;
+}
+
+main #_6 section {
+    margin-top: 2vh;
+}
+
+main #_6 section ul {
+    display: flex;
+    justify-content: center;
+    gap: 5vw;
+}
+
+main #_7 {
+    display: flex;
+    justify-content: center;
+
+    & div {
+        margin-top: 1em;
+    }
+
+    & #container_form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 40em;
+    }
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+
+    & label {
+        color: #7a7a7a;
+    }
+
+    & input[type="text"], [type="email"], textarea {
+        background-color: #ffffff;
+        border-color: #02010129;
+        border-radius: 5px 5px 5px 5px;
+        padding: 12px;
+    }
+}
+
+.formulario_checkbox {
+    display: inline;
+}

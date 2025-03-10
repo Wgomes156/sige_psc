@@ -7,6 +7,7 @@ urlpatterns = [
     path("login", views.loginview),
     path("cliente", views.create_user, name="criar-usuario"),
     path("cadastros", views.create_user_adm),
+    path("sobre", views.about),
     # path("foto_usuario", views.foto_perfil),
     ] + static("Foto_cadastro", document_root="Foto_cadastro") + static ("Documentos", document_root="Documentos")
 

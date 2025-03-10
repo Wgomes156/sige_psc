@@ -7,13 +7,16 @@ from django.contrib.auth.decorators import login_required, user_passes_test
 
 # Create your views here.
 def index(request):
-    return render(request, "index.html")
+    return render(request, "pages/home.html")
+
+def about(request):
+    return render(request, "pages/about.html")
 
 def loginview(request):
     if request.user.is_authenticated:
         return redirect("criar-usuario")
     if request.method != "POST":
-        return render(request, "login.html")
+        return render(request, "pages/login.html")
     
     email = request.POST.get("email")
     password = request.POST.get("password")
@@ -23,25 +26,25 @@ def loginview(request):
         login(request, user)
         return redirect("criar-usuario")
     else:
-        return render(request, "login.html", context={"erro_message": "Usuário não cadastrado!"})
+        return render(request, "pages/login.html", context={"erro_message": "Usuário não cadastrado!"})
 
 @login_required
 def create_user(request):
     if request.method =="GET":
-        return render(request,"create_user.html", {"form": UserForm(instance=request.user)})
+        return render(request,"pages/create_user.html", {"form": UserForm(instance=request.user)})
     elif request.method=="POST":
         form=UserForm(request.POST,request.FILES, instance=request.user)
         if form.is_valid():
            # form.instance.set_password(form.cleaned_data["password"]) - senha não necessária 
             form.save()
             #return HttpResponse("Usuário criado com sucesso")
-    return render(request,"create_user.html", {"form":form })
+    return render(request,"pages/create_user.html", {"form":form })
 
 @login_required
 @user_passes_test(lambda u: u.groups.filter(name='adm').exists())
 def create_user_adm(request):
     if request.method =="GET":
-        return render(request,"create_user.html", {"form":CreateUserForm()})
+        return render(request,"pages/create_user.html", {"form":CreateUserForm()})
     elif request.method=="POST":
         form=CreateUserForm(request.POST)
         if form.is_valid():
@@ -49,7 +52,7 @@ def create_user_adm(request):
             form.instance.set_password(password)
             form.save()
             return HttpResponse("Usuário criado com sucesso\nsenha do usuário: "+password)
-    return render(request,"create_user.html", {"form":form })
+    return render(request,"pages/create_user.html", {"form":form })
 
 # @login_required
 # def foto_perfil(request):

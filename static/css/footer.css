@@ -1,0 +1,93 @@
+footer {
+    & #footer_1 {
+        background-image: url(../img/banner_3.jpg);
+        position: relative;
+
+        & #linebgoverlay {
+            background-color: var(--font-white);
+            background-image: url(../img/linebgoverlay.png);
+            background-position: top center;
+            background-repeat: no-repeat;
+            opacity: 0.9;
+
+            transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+            padding-top: 60px;
+
+            min-height: 580px;
+        }
+
+        & #footer_container {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            margin: auto;
+            max-width: 700px;
+
+            display: flex;
+            align-items: center;
+            text-align: center;
+            flex-direction: column;
+            justify-content: center;
+            gap: 5em;
+
+            & h2 {
+                font-family: "Archivo", Sans-serif;
+                font-size: 3.2rem;
+                line-height: 60px;
+                color: #000000;
+            }
+
+            & p {
+                text-align: center;
+                color: #000000;
+                font-family: "Lato", Sans-serif;
+                font-size: 16px;
+                line-height: 26px;
+            }
+        }
+    }
+
+    #footer_2 {
+        background-color: var(--color-primary);
+        border-top: 2px solid var(--color-border);
+        transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        padding: 40px;
+        color: var(--font-white);
+
+        & #footer_container2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            & div {
+                width: 452px;
+                height: 277px;
+                
+                align-items: center;
+                align-content: center;
+
+                & img {
+                    width: 70%;
+                }
+
+                & h2 {
+                    border-bottom: 1px solid var(--color-border);
+                    margin-bottom: 1em;
+                }
+            }
+        }
+    }
+
+    & #footer_3 {
+        background-color: var(--color-primary);
+        color: var(--font-white);
+        height: 3em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

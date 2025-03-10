@@ -1,0 +1,148 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>SIGE - SISTEMEA DE GERENCIAMENTO DA PSC</title>
+    <link rel="stylesheet" href="{% static 'libs/font-awesome-4.7.0/css/font-awesome.min.css'%}">
+    <link rel="stylesheet" href="{% static 'css/base.css'%}">
+    <link rel="stylesheet" href="{% static 'css/header.css'%}">
+    <link rel="stylesheet" href="{% static 'css/home.css'%}">
+    <link rel="stylesheet" href="{% static 'css/footer.css'%}">
+</head>
+<body>
+    <header>
+        <section id="top-bar">
+            <p>Encarregado de Dados: dpo@grupoadaptalia.com.br</p>
+            <ul class="redes">
+                <li><a href="http://linkedin.com/company/psc-service/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+            </ul>
+        </section>
+
+        <section id="top-bar-2">
+            <div>
+                <figure>
+                    <img src="{% static 'img/logo_1.png'%}" alt="logo_top">
+                </figure>
+                
+                <nav>
+                    <ul>
+                        <li><a href="/" active>Home</a></li>
+                        <li><a href="/sobre">Sobre Nós</a></li>
+                        <li><a href="#">Serviços</a></li>
+                        <li><a href="#">Contatos</a></li>
+                        <li><a href="#">Selo LGPD</a></li>
+                        <li><a href="#">Avisos de privacidade</a></li>
+                        <li><a href="/cliente">Cliente</a></li>
+                        <li><a href="/admin">Adm</a></li>
+                        {%if user.is_adm%}
+                        <li><a href="/cadastros">Cadastros</a></li>
+                        {%endif%}
+    
+                        <li>
+                            {% if user.is_authenticated %}
+                            usuario:{{user}}
+                            {% if user.foto_cadastro %}
+                            <img src="{{user.foto_cadastro.url}}" width="128">
+                            {% endif %}
+                
+                
+                            {% else%}
+                            <a href="/login" class="link-login"> <b>Login</b></a>
+                            {%endif%} 
+
+                        </li>
+                    </ul>
+                </nav>
+    
+                <!--<div id="button_menu">
+                    <a href="#" class="button-link-outline">FALE CONOSCO</a>
+                </div>-->
+    
+                <!-- <div id="menu-usuario">
+                    {% if user.is_authenticated %}
+                    usuario:{{user}}
+                    {% if user.foto_cadastro %}
+                    <img src="{{user.foto_cadastro.url}}" width="128">
+                    {% endif %}
+        
+        
+                    {% else%}
+                    <a href="/login" class="link-login"> <b>Login</b></a>
+                    {%endif%}
+                </div> -->
+
+            </div>
+        </section>
+    </header>
+    <main>
+        {%block content%}
+        {% endblock content%}
+    </main>
+    
+    <footer>
+        <section id="footer_1">
+            <div id="linebgoverlay"></div>
+            <div id="footer_container">
+                <h2>Junte-se a nós</h2>
+                <p>Estamos comprometidos em ser uma referência em excelência na prestação de serviços, trazendo soluções e resultados tangíveis para nossos clientes</p>
+                <div id="button-contato">
+                    <a href="#" class="primary-button">ENTRAR EM CONTATO</a>
+                    <a href="#" class="secund-button">RECEBA DIAGNOSTICO</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="footer_2">
+            <div id="footer_container2">
+                <div>
+                    <img src="{% static 'img/logo_2.png' %}" alt="logo_footer">
+                </div>
+        
+                <div>
+                    <h2>Links Rápidos</h2>
+                    <ul>
+                        <li>Home</li>
+                        <li>Sobre Nós</li>
+                        <li>Servico</li>
+                        <li>Contato</li>
+                        <li>Aviso de Privacidade</li>
+                    </ul>
+                </div>
+        
+                <div>
+                    <h2>Contatos</h2>
+                    <ul>
+                        <li>
+                            <i class="fa fa-phone"></i>
+                            <span>55 (21) 97157-3947</span>
+                        </li>
+                        <li>
+                            <i class="fa fa-envelope"></i>
+                            <span>psc.servicebr@gmail.com</span>
+                        </li>
+                    </ul>
+                </div>
+        
+                <div>
+                    <ul class="redes">
+                        <li>
+                            <a href="http://linkedin.com/company/psc-service/" target="_blank">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section id="footer_3">
+            <p> Raul da Cunha Ribeiro, 440/201 – Recreio dos Bandeirantes – Rio de Janeiro CEP.227-0022 /CNPJ: 48.117.061/0001-60</p>
+        </section>
+    </footer>
+</body>
+</html>
