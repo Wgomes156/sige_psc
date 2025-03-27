@@ -3,19 +3,22 @@
 {%block content%}
 <!-- <h1>
     <div style="color:rgb(0, 21, 255)">Somando Experiência.</div>
-<div style="color:orange">Alcançando Metas.</div>
+    <div style="color:orange">Alcançando Metas.</div>
 </h1>
 <p class="descricao">
-Nossa abordagem é centrada nas necessidades do cliente,
-possibilitando resultados consistentes e alinhados aos seus objetivos imediatos.
+    Nossa abordagem é centrada nas necessidades do cliente,
+    possibilitando resultados consistentes e alinhados aos seus objetivos imediatos.
 </p> -->
 
+
 <section id="_1">
-    <div class="banner">
-        <h2 class="headling-title"><b>Somando Experiências <span style="color: #fc8d0a">Alcançando Metas.</span></b></h2>
-        <p>Nossa abordagem é centrada nas necessidades do cliente, possibilitando resultados consistentes e alinhados
-            aos seus objetivos imediatos.</p>
-        <a href="#" class="button-link">QUERO RECEBER UM DIAGNÓSTICO</a>
+    <div class="banner-container">
+        <div class="banner">
+            <h2 class="headling-title"><b>Somando Experiências <span style="color: #fc8d0a">Alcançando Metas.</span></b></h2>
+            <p class="text-paragrafo">Nossa abordagem é centrada nas necessidades do cliente, possibilitando resultados consistentes e alinhados
+                aos seus objetivos imediatos.</p>
+            <a href="#" class="button-link">QUERO RECEBER UM DIAGNÓSTICO</a>
+        </div>
     </div>
 </section>
 
@@ -31,54 +34,44 @@ possibilitando resultados consistentes e alinhados aos seus objetivos imediatos.
             <li>
                 <div class="card-primary">
                     <img src="{% static 'img/cards/prin/consultoria.jpeg'%}" alt="#">
-                    <h3>Titulo</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, dolor explicabo. Veritatis ipsa
-                        rem sit eligendi tempora alias ex velit distinctio, ea totam delectus voluptatum, officia
-                        voluptatibus dolore, dolores optio.</p>
+                    <h3>Consultoria Empresarial</h3>
+                    <p>Soluções personalizadas em análise de dados, auditoria antifraude, logística e organizção de eventos</p>
 
                     <a href="#">SAIBA MAIS</a>
                 </div>
             </li>
             <li>
                 <div class="card-primary">
-                    <img src="{% static 'img/cards/prin/consultoria.jpeg'%}" alt="#">
-                    <h3>Titulo</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, dolor explicabo. Veritatis ipsa
-                        rem sit eligendi tempora alias ex velit distinctio, ea totam delectus voluptatum, officia
-                        voluptatibus dolore, dolores optio.</p>
+                    <img src="{% static 'img/cards/prin/gerenciamento.png'%}" alt="#">
+                    <h3>Gerenciamento de Projetos</h3>
+                    <p>Gerenciamento estratégico de tarefas para o alcance de metas com eficiência</p>
 
                     <a href="#">SAIBA MAIS</a>
                 </div>
             </li>
             <li>
                 <div class="card-primary">
-                    <img src="{% static 'img/cards/prin/consultoria.jpeg'%}" alt="#">
-                    <h3>Titulo</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, dolor explicabo. Veritatis ipsa
-                        rem sit eligendi tempora alias ex velit distinctio, ea totam delectus voluptatum, officia
-                        voluptatibus dolore, dolores optio.</p>
+                    <img src="{% static 'img/cards/prin/investigacao.png'%}" alt="#">
+                    <h3>Investigação Empresarial</h3>
+                    <p>Coleta e análise de dados, validação de informações e elaboração de relatórios detalhados.</p>
 
                     <a href="#">SAIBA MAIS</a>
                 </div>
             </li>
             <li>
                 <div class="card-primary">
-                    <img src="{% static 'img/cards/prin/consultoria.jpeg'%}" alt="#">
-                    <h3>Titulo</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, dolor explicabo. Veritatis ipsa
-                        rem sit eligendi tempora alias ex velit distinctio, ea totam delectus voluptatum, officia
-                        voluptatibus dolore, dolores optio.</p>
+                    <img src="{% static 'img/cards/prin/treinamento.png'%}" alt="#">
+                    <h3>Treinamento e capacitação dos colaboradores</h3>
+                    <p>Oferecemos programas de treinamento personalizados para capacitar colaboradores de acordo com as necessidades específicas de cada cliente e setor.</p>
 
                     <a href="#">SAIBA MAIS</a>
                 </div>
             </li>
             <li>
                 <div class="card-primary">
-                    <img src="{% static 'img/cards/prin/consultoria.jpeg'%}" alt="#">
-                    <h3>Titulo</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, dolor explicabo. Veritatis ipsa
-                        rem sit eligendi tempora alias ex velit distinctio, ea totam delectus voluptatum, officia
-                        voluptatibus dolore, dolores optio.</p>
+                    <img src="{% static 'img/cards/prin/consultoria.jpg'%}" alt="#">
+                    <h3>Consultoria e implementação de compliance</h3>
+                    <p>Desenvolvemos e implementamos estruturas de compliance personalizadas para empresas de diferentes portes e segmentos.</p>
 
                     <a href="#">SAIBA MAIS</a>
                 </div>
@@ -90,7 +83,7 @@ possibilitando resultados consistentes e alinhados aos seus objetivos imediatos.
 <section id="_3">
     <div class="banner">
         <h2>PSC Service: Sua Parceira em Gestão Empresarial</h2>
-        <p class="text-editor">
+        <p class="text-paragrafo">
             Na PSC Service, estamos dedicados a liderar o caminho em gestão empresarial com uma forte ênfase em
             planejamento organizacional. Nosso compromisso é claro: fornecer soluções inteligentes e eficazes que
             impulsionem o crescimento e o sucesso de nossos clientes.
@@ -101,99 +94,84 @@ possibilitando resultados consistentes e alinhados aos seus objetivos imediatos.
 </section>
 
 <section id="_4">
-    <h2>Na PSC, <span>somos especialistas em atender o setor de Mobilidade Humana</span>, oferecendo soluções e
-        treinamentos personalizados para os setores de:</h2>
+    <h2>Na PSC, <b>somos especialistas em atender o setor de Mobilidade Humana</b>, oferecendo soluções e treinamentos personalizados para os setores de:</h2>
 
     <section class="deck">
         <ul>
             <li>
                 <div class="card-sec">
                     <figure>
-                        <img src="https://pscservice.site/wp-content/uploads/2024/06/trem-de-brinquedo.png" alt="#">
+                        <img src="{% static 'img/especialidades/aeroporto.png'%}" alt="#">
                     </figure>
                     <div>
-                        <h3>Titulo</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, itaque accusantium fugiat
-                            voluptatem rerum maiores fugit maxime id sequi dicta eligendi non vero, magni officia ea
-                            aperiam optio, accusamus unde.</p>
+                        <h3>Aeroportos</h3>
+                        <p>Orientamos a mitigar os riscos com segurança, eficiência operacional e satisfação dos passageiros por meio de serviços de treinamento, consultoria e auditoria.</p>
                     </div>
                 </div>
             </li>
             <li>
                 <div class="card-sec">
                     <figure>
-                        <img src="https://pscservice.site/wp-content/uploads/2024/06/trem-de-brinquedo.png" alt="#">
+                        <img src="{% static 'img/especialidades/metro-1.png'%}" alt="#">
                     </figure>
                     <div>
-                        <h3>Titulo</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, itaque accusantium fugiat
-                            voluptatem rerum maiores fugit maxime id sequi dicta eligendi non vero, magni officia ea
-                            aperiam optio, accusamus unde.</p>
+                        <h3>Metros</h3>
+                        <p>Implementamos estratégias para melhorar a operação e a segurança, treinando equipes para lidar com situações adversas preservando a imagem da empresa e satisfação do cliente.</p>
                     </div>
                 </div>
             </li>
             <li>
                 <div class="card-sec">
                     <figure>
-                        <img src="https://pscservice.site/wp-content/uploads/2024/06/trem-de-brinquedo.png" alt="#">
+                        <img src="{% static 'img/especialidades/trem-de-brinquedo.png'%}" alt="#">
                     </figure>
                     <div>
-                        <h3>Titulo</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, itaque accusantium fugiat
-                            voluptatem rerum maiores fugit maxime id sequi dicta eligendi non vero, magni officia ea
-                            aperiam optio, accusamus unde.</p>
+                        <h3>Trens</h3>
+                        <p>Fornecemos serviços de treinamento especializado para colaboradores, garantindo a excelência no atendimento ao público e a segurança nas operações ferroviárias.</p>
                     </div>
                 </div>
             </li>
             <li>
                 <div class="card-sec">
                     <figure>
-                        <img src="https://pscservice.site/wp-content/uploads/2024/06/trem-de-brinquedo.png" alt="#">
+                        <img src="{% static 'img/especialidades/barco.png'%}" alt="#">
                     </figure>
                     <div>
-                        <h3>Titulo</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, itaque accusantium fugiat
-                            voluptatem rerum maiores fugit maxime id sequi dicta eligendi non vero, magni officia ea
-                            aperiam optio, accusamus unde.</p>
+                        <h3>Barcas</h3>
+                        <p>Desenvolvemos e implementamos programas de treinamento focados na segurança e no atendimento ao público, além de oferecer consultoria para padronização e organização dos processos nas operações.</p>
                     </div>
                 </div>
             </li>
             <li>
                 <div class="card-sec">
                     <figure>
-                        <img src="https://pscservice.site/wp-content/uploads/2024/06/trem-de-brinquedo.png" alt="#">
+                        <img src="{% static 'img/especialidades/companhia.png'%}" alt="#">
                     </figure>
                     <div>
-                        <h3>Titulo</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, itaque accusantium fugiat
-                            voluptatem rerum maiores fugit maxime id sequi dicta eligendi non vero, magni officia ea
-                            aperiam optio, accusamus unde.</p>
+                        <h3>Empresas</h3>
+                        <p>Realizamos investigações detalhadas para detectar atividades ilícitas, proteger ativos e garantir a conformidade com as políticas internas.</p>
                     </div>
                 </div>
             </li>
             <li>
                 <div class="card-sec">
                     <figure>
-                        <img src="https://pscservice.site/wp-content/uploads/2024/06/trem-de-brinquedo.png" alt="#">
+                        <img src="{% static 'img/especialidades/mao.png'%}" alt="#">
                     </figure>
                     <div>
-                        <h3>Titulo</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, itaque accusantium fugiat
-                            voluptatem rerum maiores fugit maxime id sequi dicta eligendi non vero, magni officia ea
-                            aperiam optio, accusamus unde.</p>
+                        <h3>Recursos Humanos</h3>
+                        <p>Auxiliamos na identificação de fraudes internas, comportamentos inadequados e outras questões que podem impactar a integridade da empresa. Nossos serviços de investigação ajudam a manter um ambiente de trabalho seguro e ético.</p>
                     </div>
                 </div>
             </li>
             <li>
                 <div class="card-sec">
                     <figure>
-                        <img src="https://pscservice.site/wp-content/uploads/2024/06/trem-de-brinquedo.png" alt="#">
+                        <img src="{% static 'img/especialidades/advogado.png'%}" alt="#">
                     </figure>
                     <div>
-                        <h3>Titulo</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, itaque accusantium fugiat
-                            voluptatem rerum maiores fugit maxime id sequi dicta eligendi non vero, magni officia ea
-                            aperiam optio, accusamus unde.</p>
+                        <h3>Advogados</h3>
+                        <p>Oferecemos suporte na coleta de provas, verificação de informações e análise de dados para fortalecer casos judiciais. Nossa experiência em investigação digital pode ser crucial para a defesa ou acusação em processos legais.</p>
                     </div>
                 </div>
             </li>
@@ -202,20 +180,26 @@ possibilitando resultados consistentes e alinhados aos seus objetivos imediatos.
 </section>
 
 <section id="_5" class="information">
-    <h2>Trabalhos realizados com nossa expertise:</h2>
+    <div>
+        <h2 class="text-title">Trabalhos realizados com <b>nossa expertise:</b></h2>
+        <hr class="divider">
+    </div>
     <img src="{% static 'img/expertise.png'%}" alt="expertise">
 </section>
 
-<section id="_5.1" class="information">
-    <h2>Alguns de nossos clientes</h2>
+<section id="_5_1" class="information">
+    <div>
+        <h2 class="text-title">Alguns de <b>nossos clientes</b></h2>
+        <hr class="divider">
+    </div>
     <figure>
-        <img src="{% static 'img/Clientes.jpg'%}" alt="clientes">
+        <img src="{% static 'img/Clientes.jpg'%}" width="100%" alt="clientes">
     </figure>
 </section>
 
 <section id="_6">
     <div>
-        <h2>Uma única solução para seu negócio.</h2>
+        <h2>Uma única <span>solução</span> para seu negócio.</h2>
         <p>Não desperdice mais recursos em treinamentos ineficientes, invista agora!</p>
 
         <section>
@@ -245,7 +229,7 @@ possibilitando resultados consistentes e alinhados aos seus objetivos imediatos.
     <div id="container_form">
         <h2>Quer melhorar seus resultados?</h2>
         <span>Receba um diagnóstico gratuito</span>
-        <hr>
+        <hr class="divider">
 
         <h3>Preencha os campos abaixo, vamos entrar em contato.</h3>
 
@@ -274,7 +258,7 @@ possibilitando resultados consistentes e alinhados aos seus objetivos imediatos.
                 <div class="formulario_checkbox">
                     <input type="checkbox" id="lgpd">
                     <label for="lgpd">Conforme LGPD, trataremos seus dados com a finalidade de responder ao seu e-mail
-                        após seus contato. Clique aqui para acessar o <a href="#">Aviso de privacidade</a></label>
+                        após seus contato. Clique aqui para acessar o <a href="/aviso">Aviso de privacidade</a></label>
                 </div>
 
                 <div class="formulario">
@@ -284,4 +268,5 @@ possibilitando resultados consistentes e alinhados aos seus objetivos imediatos.
         </div>
     </div>
 </section>
+
 {%endblock content%}

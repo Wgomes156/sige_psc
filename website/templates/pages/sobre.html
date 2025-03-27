@@ -1,0 +1,112 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+{%block content%}
+
+<section id="banner_init">
+    <div class="banner-container">
+        <section class="banner">
+            <h1 class="headling-title"><b>Sua <span style="color: #fc8d0a">parceira</span> em gestão empresarial</b>
+            </h1>
+            <p class="text-paragrafo">Na PSC Service, estamos dedicados a liderar o caminho em gestão empresarial com
+                uma
+                forte ênfase em planejamento organizacional.</p>
+        </section>
+    </div>
+</section>
+
+<section id="historia">
+    <section class="historia_content">
+        <h2>Nossa história</h2>
+        <p>
+            A PSC Service surgiu com o objetivo de prestar um serviço personalizado, atendendo às necessidades
+            específicas de cada cliente. Desde a sua fundação, temos nos dedicado a oferecer soluções inovadoras e de
+            alta qualidade em treinamento corporativo, consultoria empresarial e investigação digital.
+        </p>
+        <p>
+            Nossa história é marcada pelo compromisso com a excelência e a busca constante por melhorias. Ao longo dos
+            anos, capacitamos milhares de colaboradores em diversas regiões do Brasil, ajudando empresas a atingir seus
+            objetivos e superar desafios. Com uma abordagem centrada no cliente, desenvolvemos programas de treinamento
+            e consultoria que se adaptam às demandas de cada organização, garantindo resultados eficientes e
+            sustentáveis.
+        </p>
+        <p>
+            Na PSC Service, acreditamos que o sucesso dos nossos clientes é o nosso sucesso. Por isso, investimos em
+            tecnologias avançadas e em uma equipe altamente qualificada para oferecer serviços que realmente fazem a
+            diferença.
+        </p>
+    </section>
+    <section class="historia_content">
+        <img src="{% static 'img/banner_3.jpg'%}" width="100%" alt="#">
+    </section>
+</section>
+
+<section id="diretrizes">
+    <h2>Nossas diretrizes</h2>
+
+    <div class="diretriz">
+        <i class="fa fa-eye"></i>
+        <div>
+            <h3>O que acreditamos?</h3>
+            <p>Acreditamos no poder da inovação, da eficiência e da colaboração. Cada empresa tem o potencial para
+                alcançar o sucesso e estamos aqui para transformar essa visão em realidade.</p>
+        </div>
+    </div>
+
+    <div class="diretriz">
+        <i class="fa fa-handshake-o" aria-hidden="true"></i>
+        <div>
+            <h3>O que fazemos?</h3>
+            <p>Facilitamos a sua transformação empresarial através de uma abordagem prática que impulsiona o
+                crescimento, a eficiência e a sustentabilidade dos seus negócios.</p>
+        </div>
+    </div>
+
+    <div class="diretriz">
+        <i class="fa fa-filter"></i>
+        <div>
+            <h3>Com quem trabalhamos?</h3>
+            <p>Trabalhamos com empresas líderes em mobilidade humana, tecnologia, multinacionais em metalúrgica e
+                instituições educacionais que compartilham nossa visão de excelência e progresso.</p>
+        </div>
+    </div>
+</section>
+
+<section id="abordagem">
+    <section id="text-abordagem">
+        <h2>Nossa abordagem</h2>
+        <p>Com um foco claro em Direitos Humanos, Diversidade, Acessibilidade e Humanização, nossa equipe está preparada
+            para oferecer soluções personalizadas e inteligentes. Utilizamos uma abordagem dinâmica em nosso trabalho.
+        </p>
+    </section>
+
+    <section id="boards">
+        <div class="board">
+            <div id="banner_3">
+            </div>
+            <div>
+                <h3>Ambientação do trabalho</h3>
+                <p>Compreensão profunda das atividades e demandas do cliente.</p>
+            </div>
+        </div>
+
+        <div class="board">
+            <div id="analise_dados">
+            </div>
+            <div>
+                <h3>Análise e Dados</h3>
+                <p>Realização de análises precisas e diagnósticos das necessidades do cliente. </p>
+            </div>
+        </div>
+
+        <div class="board" style="flex-grow: 2;">
+            <div id="analise">
+            </div>
+            <div>
+                <h3>Apresentação da Análise</h3>
+                <p>Apresentação clara de análises, sugestões e planejamento para alcançar resultados tangíveis.</p>
+            </div>
+        </div>
+    </section>
+
+</section>
+{%endblock%}

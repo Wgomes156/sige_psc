@@ -1,0 +1,33 @@
+#content-banner-user {
+    min-height: 85vh;
+    width: 100%;
+
+    background-color: #F8E1E1;
+    background-image: url(../img/banner_1.png);
+    background-position: center right;
+    background-size: cover;
+
+    justify-content: flex;
+    align-items: center;
+}
+
+.formulario-gen {
+    display: flex;
+    flex-direction: column;
+
+    & p {
+        & label {
+            color: #7a7a7a;
+        }
+    
+        & input[type="text"], [type="email"], [type="password"], [type="date"], [type="file"], textarea {
+            background-color: #ffffff;
+            border-color: #02010129;
+            border-radius: 5px;
+            padding: 12px;
+            width: 94%;
+            margin-bottom: 2em;
+
+        }
+    }
+}

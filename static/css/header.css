@@ -1,71 +1,149 @@
-header {
-    & section#top-bar {
-        background-color: var(--color-primary);
-        color: var(--font-white);
-        height: 3em;
+header section#top-bar {
+    background-color: var(--color-primary);
+    color: var(--font-white);
+    height: 3em;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
 
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
+header section#top-bar p {
+    color: #FFF;
+    font-size: 14px;
+    font-weight: 200;
+}
 
-        & ul {
-            display: flex;
-            gap: 10px;
-        }
-    }
+header section#top-bar ul {
+    display: flex;
+    gap: 10px;
+}
 
-    & section#top-bar-2 {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        box-sizing: border-box;
+header section#top-bar-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
 
-        & div {
-            max-width: 1240px;
-            height: 8vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+header section#top-bar-2 div {
+    max-width: 1240px;
+    height: 8vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-            & figure {
-                width: 21.49%;
+header section#top-bar-2 div figure {
+    width: 21.49%;
+}
 
-                & img {
-                    width: 100%;
-                }
-            }
-            
-            & nav {
-                padding: 10px;
-                width: 100%;
-    
-                & ul {
-                    display: flex;
-                    flex-wrap: wrap;
-                    justify-content: center;
-    
-                    & li {
-                        padding: 10px 20px;
-    
-                        & a {
-                            color: black;
-                        }
-    
-                        & :active {
-                            border-bottom: 3px solid var(--color-primary);
-                        }
-    
-                        & :hover {
-                            border-bottom: 3px solid var(--color-primary);
-                        }
-                    }
-                }
-            }
+header section#top-bar-2 div figure img {
+    width: 100%;
+}
 
-            & #button_menu {
-                width: 22.293%;
-            }
-        }
+header section#top-bar-2 div nav {
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
 
+header section#top-bar-2 div nav #menu-toggle {
+    display: none;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 15%);
+    border: 0 solid;
+    border-radius: 3px;
+    color: #33373d;
+    cursor: pointer;
+    font-size: var(--nav-menu-icon-size, 22px);
+    padding: .25em;
+}
+
+header section#top-bar-2 div nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+header section#top-bar-2 div nav ul li {
+    padding: 10px 20px;
+}
+
+header section#top-bar-2 div nav ul li a {
+    color: black;
+}
+
+header section#top-bar-2 div nav ul li:active,
+header section#top-bar-2 div nav ul li:hover {
+    border-bottom: none;
+}
+
+header section#top-bar-2 div nav ul li:active,
+header section#top-bar-2 div nav ul li:hover {
+    border-bottom: 3px solid var(--color-primary);
+}
+
+header section#top-bar-2 div #button_menu {
+    width: 22.293%;
+}
+
+@media (max-width: 425px) {
+    header section#top-bar {
+        flex-direction: column;
     }
 }
+
+@media (max-width: 768px) {
+    header section#top-bar-2 div {
+        justify-content: space-around;
+    }
+    header section#top-bar-2 div nav {
+        width: auto;
+    }
+    header section#top-bar-2 div nav #menu-toggle {
+        display: flex;
+    }
+    
+    header section#top-bar-2 div nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background: white;
+        width: 100%;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        margin-top: 4em;
+    }
+
+    header section#top-bar-2 div nav ul.show {
+        display: flex;
+    }
+
+    header section#top-bar-2 div nav ul li:active,
+    header section#top-bar-2 div nav ul li:hover {
+        border-bottom: none;
+        background-color: #3f444b;
+    }
+}
+
+
+/* Ícone do botão hambúrguer */
+/* .menu-toggle {
+    display: none;
+    font-size: 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
+} */
+
+/* @media (max-width: 768px) {
+    header {
+        & #top-bar-2 {
+            & nav {
+                & ul {}
+            }
+        }
+    }
+} */

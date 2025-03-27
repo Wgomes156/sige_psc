@@ -1,10 +1,19 @@
 {% extends "layouts/base.html" %}
-{% load static %}
 {%block content%}
 
-<form method="post" enctype="multipart/form-data">
-    {%csrf_token%}
-    {{form.as_p}}
-    <button type="submit"> Salvar</button>
-</form>
+<section class="banner" id="content-banner-user">
+    <form method="post" enctype="multipart/form-data" class="form-contact">
+        {%csrf_token%}
+        <section>
+            <div class="row formulario-gen">
+                {{form.as_p}}
+            </div>
+            
+            <div class="row formulario">
+                <button class="primary-button" type="submit"> Salvar</button>
+            </div>
+        </section>
+    </form>
+</section>
+
 {%endblock content%}

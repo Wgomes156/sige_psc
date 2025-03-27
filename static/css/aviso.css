@@ -1,0 +1,27 @@
+#politicas_privacidade h1 {
+    font-size: xxx-large;
+    text-align: center;
+}
+
+#politicas_content {
+    padding: 0 15em 0 15em;
+    margin-top: 2em;
+}
+
+#politicas_content p {
+    font-family: "Roboto", Sans-serif;
+    font-size: 29px;
+    font-weight: 400;
+    margin-bottom: 2em;
+    color: #7a7a7a;
+}
+
+@media (max-width: 768px){
+    #politicas_content {
+        padding: 0 8em 0 8em;
+    }
+
+    #politicas_content p {
+        font-size: 20px;
+    }
+}

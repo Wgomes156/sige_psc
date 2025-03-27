@@ -1,0 +1,42 @@
+{% extends "layouts/base.html" %}
+{%block content%}
+<section class="banner" id="content-main">
+    <section id="content">
+        <section id="info">
+            <h2>Entre em contato</h2>
+            
+            <div>
+                <span><i class="fa fa-phone"></i> 55 (21) 97157-39-47</span>
+                <span><i class="fa fa-envelope"></i> psc.servicebr@gmail.com</span>
+            </div>
+        </section>
+
+        <section id="form-contact">
+            <div class="row formulario">
+                <input type="text" placeholder="Nome">
+            </div>
+            
+            <div class="row formulario">
+                <input type="text" placeholder="Email">
+            </div>
+
+            <div class="row formulario">
+                <input type="text" placeholder="Assunto">
+            </div>
+
+            <div class="row formulario">
+                <textarea id="descricao" placeholder="Messagem"></textarea>
+            </div>
+            <div class="formulario_checkbox row">
+                <input type="checkbox" id="lgpd">
+                <label for="lgpd">Conforme LGPD, trataremos seus dados com a finalidade de responder ao seu e-mail
+                    após seus contato. Clique aqui para acessar o <a href="/aviso">Aviso de privacidade</a></label>
+            </div>
+            <div class="row">
+                <button class="primary-button">Entrar em contato</button>
+            </div>
+        </section>
+
+    </section>
+</section>
+{%endblock%}

@@ -30,10 +30,9 @@ footer {
             text-align: center;
             flex-direction: column;
             justify-content: center;
-            gap: 5em;
+            gap: 3em;
 
             & h2 {
-                font-family: "Archivo", Sans-serif;
                 font-size: 3.2rem;
                 line-height: 60px;
                 color: #000000;
@@ -45,11 +44,17 @@ footer {
                 font-family: "Lato", Sans-serif;
                 font-size: 16px;
                 line-height: 26px;
+                padding: 2em;
+            }
+
+            & #button-contato {
+                display: flex;
+                gap: 2em;
             }
         }
     }
 
-    #footer_2 {
+    & #footer_2 {
         background-color: var(--color-primary);
         border-top: 2px solid var(--color-border);
         transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
@@ -62,11 +67,13 @@ footer {
             display: flex;
             justify-content: center;
             align-items: center;
+            gap: 2em;
 
             & div {
-                width: 452px;
-                height: 277px;
-                
+                width: 100%;
+                /* width: 452px; */
+                /* height: 277px; */
+
                 align-items: center;
                 align-content: center;
 
@@ -89,5 +96,46 @@ footer {
         display: flex;
         justify-content: center;
         align-items: center;
+
+        & p {
+            color: #FFF;
+            font-size: 14px;
+            font-weight: 200;
+            text-align: center;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+
+    footer {
+        & #footer_1 {
+            #footer_container {
+                & h2 {
+                    font-size: 2.5rem;
+                    line-height: 50px;
+                }
+
+                & #button-contato {
+                    flex-direction: column;
+                }
+            }
+        }
+
+        & #footer_2 {
+            & #footer_container2 {
+                flex-direction: column;
+                gap: 1em;
+
+                & #logo_footer {
+                    display: flex;
+                    justify-content: center;
+
+                    & img {
+                        width: 50%;
+                    }
+                }
+            }
+        }
     }
 }
