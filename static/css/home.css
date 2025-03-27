@@ -1,16 +1,15 @@
 main #_1 {
     background-color: #F8E1E1;
     background-image: url(../img/banner_1.png);
-    background-position: center right;
+    background-position: center left;
     background-size: cover;
+}
 
-    & div {
-        min-height: 631px;
-        max-width: 1240px;
-
-        margin-right: auto;
-        margin-left: auto;
-    }
+.banner-container {
+    min-height: 631px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
 }
 
 main #_2 {
@@ -24,6 +23,24 @@ main #_2 #servicos {
 
 main #_2 div h2 {
     margin-bottom: 12px;
+}
+
+main #_2 section ul li {
+    width: 250px;
+}
+
+main #_2 section ul li div h3 {
+    font-family: "Roboto", Sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #333333;
+}
+
+main #_2 section ul li div p {
+    text-align: justify;
+    color: #777777;
+    font-size: 0.875rem;
+    line-height: 1.617em;
 }
 
 main #_3 {
@@ -42,6 +59,54 @@ main #_4 {
 
 main #_4 h2 {
     text-align: center;
+    font-family: "Montserrat", Sans-serif;
+    font-size: 35px;
+    font-weight: 200;
+    color: #072B47;
+    padding-left: 10vw;
+    padding-right: 10vw;
+}
+
+main #_4 section ul li {
+    width: 330px;
+}
+
+main #_5 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3vh;
+}
+
+main #_5 div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1vh;
+}
+
+main #_5 img {
+    width: 50%;
+}
+
+main #_5_1 {
+    margin-top: 4vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5vh;
+    padding-bottom: 12vh;
+}
+
+main #_5_1 div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1vh;
+}
+
+main #_5_1 img {
+    width: 70%;
 }
 
 main #_6 {
@@ -56,6 +121,26 @@ main #_6 {
 main #_6 div {
     text-align: center;
     width: 1140px;
+    padding: 3em;
+}
+
+main #_6 div h2 {
+    font-family: "Poppins", Sans-serif;
+    font-size: 42px;
+    font-weight: 700;
+    color: #FFFFFF;
+}
+
+main #_6 div h2 span {
+    color: #fc8d0a;
+}
+
+main #_6 div p {
+    text-align: center;
+    color: #FFFFFF;
+    font-family: "Poppins", Sans-serif;
+    font-size: 18px;
+    font-weight: 200;
 }
 
 main #_6 section {
@@ -68,9 +153,17 @@ main #_6 section ul {
     gap: 5vw;
 }
 
+main #_6 section ul li {
+    color: #FFFFFF;
+    font-family: "Poppins", Sans-serif;
+    font-size: 40px;
+    font-weight: 600;
+}
+
 main #_7 {
     display: flex;
     justify-content: center;
+    margin-bottom: 3em;
 
     & div {
         margin-top: 1em;
@@ -81,6 +174,31 @@ main #_7 {
         flex-direction: column;
         align-items: center;
         width: 40em;
+        padding: 5em;
+
+        & h2 {
+            font-family: "Poppins", Sans-serif;
+            font-size: 35px;
+            font-weight: 100;
+            color: #000000;
+        }
+
+        & span {
+            font-family: "Poppins", Sans-serif;
+            font-size: 25px;
+            font-weight: 500;
+            color: #000000;
+            margin-bottom: 2vh;
+        }
+        
+        & h3 {
+            margin-top: 2vh;
+            font-family: "Poppins", Sans-serif;
+            font-size: 25px;
+            font-weight: 100;
+            color: #000000;
+            text-align: center;
+        }
     }
 }
 
@@ -92,14 +210,37 @@ main #_7 {
         color: #7a7a7a;
     }
 
-    & input[type="text"], [type="email"], textarea {
+    & input[type="text"], [type="email"], [type="password"], [type="date"], textarea {
         background-color: #ffffff;
         border-color: #02010129;
-        border-radius: 5px 5px 5px 5px;
+        border-radius: 5px;
         padding: 12px;
     }
 }
 
 .formulario_checkbox {
-    display: inline;
+    display: block;
+    margin-top: 1em;
+}
+
+.text-title {
+    font-family: "Poppins", Sans-serif;
+    font-size: 35px;
+    font-weight: 200;
+    color: #000000;
+}
+
+.divider {
+    background: black;
+    width: 30%;
+}
+
+@media (max-width: 768px) {
+    main #_2 section ul li {
+        width: 430px;
+    }
+
+    main #_6 div section ul {
+        flex-direction: column;
+    }
 }

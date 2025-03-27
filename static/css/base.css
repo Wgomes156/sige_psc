@@ -45,7 +45,7 @@
     color: #ffffff;
     border-style: solid;
     border-color: #1896fe;
-    border-radius: 50px 50px 50px 50px;
+    border-radius: 15px;
     box-shadow: 5px -5px 60px 0px rgba(0, 0, 0, 0.1);
     padding: 16px 50px 16px 50px;
 }
@@ -68,15 +68,17 @@
 .card-primary {
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
     transition: 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
-    margin: 20px 20px 20px 20px;
+    margin: 20px;
     --e-column-margin-right: 20px;
     --e-column-margin-left: 20px;
     padding: 10px 10px 0px 10px;
     border-radius: 10px;
+    height: 100%;
+    text-align: center;
     
     display: flex;
     flex-direction: column;
-    gap: 2vh;
+    justify-content: space-between;
 }
 
 .card-primary img {
@@ -90,9 +92,16 @@
 
 .card-sec {
     box-shadow: 0px 8px 13px 0px rgba(0, 0, 0, 0.5);
+    transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
     border-radius: 7px;
     padding: 30px;
     text-align: center;
+    height: 80%;
+}
+
+.card-sec:hover {
+    border-radius: 30px;
+    transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
 }
 
 .card-sec figure {
@@ -111,8 +120,10 @@
 
 
 .banner {
-    width: 766px;
-    margin-left: 169px;
+    max-width: 100%; 
+    width: 80vw; 
+    margin-left: auto; 
+    margin-right: auto;
     color: white;
 
     display: flex;
@@ -130,13 +141,8 @@
 .deck ul {
     display: flex;
     flex-wrap: wrap;
-    gap: 1vw;
+    gap: 3em;
     justify-content: center;
-}
-
-.deck ul li {
-    width: 19%;
-    height: auto;
 }
 
 .information {
@@ -155,16 +161,28 @@
 }
 
 .headling-title {
-    /* font-family: "Poppins", Sans-serif; */
+    font-family: "Poppins", Sans-serif;
     font-size: 58px;
     font-weight: 200;
     color: #FFFFFF;
 }
 
-.text-editor {
+.text-paragrafo {
     text-align: left;
     color: #FFFFFF;
     font-family: "Poppins", Sans-serif;
     font-size: 20px;
     font-weight: 200;
+}
+
+.show {
+    display: flex;
+}
+
+.icon {
+    font-style: normal;
+}
+
+.noshow {
+    display: none;
 }

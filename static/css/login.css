@@ -1,0 +1,40 @@
+#content-banner {
+    min-height: 50vh;
+    width: 100%;
+
+    background-color: #F8E1E1;
+    background-image: url(../img/banner_1.png);
+    background-position: center left;
+    background-size: cover;
+
+    display: flex;
+    align-items: center;
+}
+
+.form-contact {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 4px;
+    box-shadow: -1px 0px 20px 0px rgba(0, 0, 0, 0.11);
+    width: 30em;
+    min-height: 20vh;
+    margin-top: 5em;
+    margin-bottom: 5em;
+}
+
+.form-contact h2 {
+    font-family: "Playfair Display", Sans-serif;
+    font-size: 3.4em;
+    font-weight: 700;
+    line-height: 1.2em;
+    color: black;
+    text-align: center;
+
+    margin-bottom: 1em;
+}
+
+@media (max-width: 610px) {
+    .form-contact {
+        width: 20em;
+    }
+}

@@ -1,0 +1,78 @@
+#content-main {
+    min-height: 50vh;
+    width: 100%;
+
+    background-color: #F8E1E1;
+    background-image: url(../img/banner_1.png);
+    background-position: center left;
+    background-size: cover;
+}
+
+#content {
+    min-height: 40vh;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5em;
+    margin-bottom: 5em;
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+}
+
+#info {
+    display: flex;
+    flex-direction: column;
+    gap: 5em;
+    width: 30em;
+    margin-top: 3em;
+}
+
+#info h2 {
+    font-family: "Playfair Display", Sans-serif;
+    font-size: 3.4em;
+    font-weight: 700;
+    line-height: 1.2em;
+    color: #ffffff;
+}
+
+#info div {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
+#info div span {
+    font-family: "Montserrat", Sans-serif;
+    font-size: 1em;
+    font-weight: 400;
+    text-transform: none;
+}
+
+#form-contact {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 4px;
+    box-shadow: -1px 0px 20px 0px rgba(0, 0, 0, 0.11);
+    width: 30em;
+}
+
+.row {
+    margin-bottom: 2em;
+}
+
+.row label {
+    color: black;
+}
+
+.row button {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    #content {
+        flex-direction: column;
+        align-items: center;
+        gap: 5em;
+        margin-bottom: 5em;
+    }
+}

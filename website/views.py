@@ -10,7 +10,13 @@ def index(request):
     return render(request, "pages/home.html")
 
 def about(request):
-    return render(request, "pages/about.html")
+    return render(request, "pages/sobre.html")
+
+def contato(request):
+    return render(request, "pages/contato.html")
+
+def aviso(request):
+    return render(request, "pages/aviso.html")
 
 def loginview(request):
     if request.user.is_authenticated:
@@ -26,7 +32,7 @@ def loginview(request):
         login(request, user)
         return redirect("criar-usuario")
     else:
-        return render(request, "pages/login.html", context={"erro_message": "Usuário não cadastrado!"})
+        return render(request, "login.html", context={"erro_message": "Usuário não cadastrado!"})
 
 @login_required
 def create_user(request):

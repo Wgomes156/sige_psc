@@ -1,0 +1,185 @@
+#banner_init {
+    background-color: #F8E1E1;
+    background-image: url(../img/banner_sobre);
+    background-position: center left;
+    background-size: cover;
+}
+
+#historia{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.historia_content {
+    width: 30vw;
+    padding: 3em;
+}
+
+.historia_content p {
+    font-family: "Roboto", Sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    margin-top: 1em;
+    color: #7a7a7a;
+}
+
+#diretrizes {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+    margin: 5em 0 5em;
+}
+
+#diretrizes h2 {
+    font-family: "Roboto", Sans-serif;
+    font-size: 3rem;
+    font-weight: 500;
+    line-height: 1.1666em;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+#diretrizes div i {
+    font-size: xxx-large;
+    border: 1px solid;
+    padding: 0.5em;
+    border-radius: 100%;
+    flex-shrink: 2;
+}
+
+#diretrizes div div h3 {
+    font-family: "Poppins", Sans-serif;
+    font-size: 1.5em;
+}
+
+#diretrizes div div p {
+    color: #ffffff;
+    font-family: "Poppins", Sans-serif;
+    font-size: 16px;
+    line-height: 1.5em;
+}
+
+.diretriz {
+    background-color: #022946;
+    color: white;
+    width: 60%;
+    padding: 2em;
+    display: flex;
+    gap: 2em;
+    align-items: center;
+}
+
+#abordagem{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+    margin: 5em 0 5em;
+}
+
+#abordagem #boards {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2em;
+}
+
+#banner_3 {
+    background-image: url("../img/banner_3.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 38%;
+}
+
+#analise_dados {
+    background-image: url("../img/analise-dados.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 38%;
+}
+
+#analise {
+    background-image: url("../img/analise.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 38%;
+}
+
+.board {
+    border: 1px solid;
+    width: 35vw;
+    height: 20vh;
+    display: flex;
+}
+
+.board div {
+    padding: 32px;
+}
+
+.board div h3 {
+    font-family: "Roboto", Sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.333em;
+    letter-spacing: -0.25px;
+    color: #333333;
+}
+
+.board div p {
+    color: #777777;
+    font-size: 0.875rem;
+    line-height: 1.617em;
+}
+
+#text-abordagem {
+    text-align: center;
+    padding: 5em;
+}
+
+#text-abordagem h2 {
+    font-family: "Roboto", Sans-serif;
+    font-size: 3rem;
+    font-weight: 500;
+    line-height: 1.1666em;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+#text-abordagem p {
+    font-family: "Poppins", Sans-serif;
+    font-size: 1.25rem;
+    font-weight: 300;
+    line-height: 1.4em;
+    letter-spacing: 0.15px;
+    color: rgba(0, 0, 0, 0.54);
+}
+
+@media (max-width: 768px) {
+
+    #historia {
+        flex-direction: column;
+    }
+
+    .diretriz {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .boards {
+        flex-direction: column;
+    }
+
+    .board {
+        width: 100%;
+    }
+
+    .historia_content {
+        width: 65vw;
+    }
+}
