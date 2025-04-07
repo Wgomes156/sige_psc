@@ -63,7 +63,10 @@
                             {%endif%}
                         </li>
                         {% if user.is_authenticated %}
-                            <li><a href="/logout">Sair</a></li>
+                            <li><form method="post" action="/accounts/logout/">
+                                {% csrf_token %}
+                                <button type="submit">logout</button>
+                            </form></li>
                         {% endif%}
                     </ul>
                 </nav>

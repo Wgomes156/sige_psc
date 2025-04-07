@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path, include
 from website import views
 from django.conf.urls.static import static
 #Caminhos do menu novo
@@ -10,6 +10,7 @@ urlpatterns = [
     path("sobre", views.about),
     path("aviso", views.aviso),
     path("contato", views.contato),
+    path("accounts/", include("django.contrib.auth.urls"))
     # path("foto_usuario", views.foto_perfil),
     ] + static("Foto_cadastro", document_root="Foto_cadastro") + static ("Documentos", document_root="Documentos")
 
