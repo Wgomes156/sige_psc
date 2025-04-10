@@ -1,0 +1,25 @@
+header section#header-top {
+    background-color: var(--color-primary);
+    color: var(--font-white);
+    height: 3em;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+header section#header-top p {
+    color: #FFF;
+    font-size: 14px;
+    font-weight: 200;
+}
+
+header section#header-top ul {
+    display: flex;
+    gap: 10px;
+}
+
+@media (max-width: 425px) {
+    header section#top-bar {
+        flex-direction: column;
+    }
+}

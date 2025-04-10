@@ -11,19 +11,6 @@
     align-items: center;
 }
 
-.historia_content {
-    width: 30vw;
-    padding: 3em;
-}
-
-.historia_content p {
-    font-family: "Roboto", Sans-serif;
-    font-size: 20px;
-    font-weight: 400;
-    margin-top: 1em;
-    color: #7a7a7a;
-}
-
 #diretrizes {
     width: 100%;
     display: flex;
@@ -59,16 +46,6 @@
     font-family: "Poppins", Sans-serif;
     font-size: 16px;
     line-height: 1.5em;
-}
-
-.diretriz {
-    background-color: #022946;
-    color: white;
-    width: 60%;
-    padding: 2em;
-    display: flex;
-    gap: 2em;
-    align-items: center;
 }
 
 #abordagem{
@@ -112,32 +89,6 @@
     width: 38%;
 }
 
-.board {
-    border: 1px solid;
-    width: 35vw;
-    height: 20vh;
-    display: flex;
-}
-
-.board div {
-    padding: 32px;
-}
-
-.board div h3 {
-    font-family: "Roboto", Sans-serif;
-    font-size: 1.5rem;
-    font-weight: 500;
-    line-height: 1.333em;
-    letter-spacing: -0.25px;
-    color: #333333;
-}
-
-.board div p {
-    color: #777777;
-    font-size: 0.875rem;
-    line-height: 1.617em;
-}
-
 #text-abordagem {
     text-align: center;
     padding: 5em;
@@ -164,22 +115,5 @@
 
     #historia {
         flex-direction: column;
-    }
-
-    .diretriz {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .boards {
-        flex-direction: column;
-    }
-
-    .board {
-        width: 100%;
-    }
-
-    .historia_content {
-        width: 65vw;
     }
 }

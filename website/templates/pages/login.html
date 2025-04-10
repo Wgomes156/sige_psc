@@ -1,19 +1,27 @@
 {% extends "layouts/base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+{% endblock %}
+
 {%block content%}
 
 <section class="banner" id="content-banner">
-    <form method="post" action="/login" id="form-login" class="form-contact">
+    <form method="post" action="/login" id="form-login" class="form-container">
         {% csrf_token %}
         <section>
             <h2> Faça seu login </h2>
-            <div class="formulario row">
-                <input type="email" id="email" name="email" placeholder="e-mail">
+            <div class="mb-3">
+                <label for="email" class="form-label">Email address</label>
+                <input class="form-control" type="email" id="email" name="email" placeholder="example@email.com" aria-describedby="emailHelp">
             </div>
-            <div class="formulario row">
-                <input type="password" id="password" name="password" placeholder="senha">
+            <div class="mb-3">
+                <label for="password" class="form-label">Senha</label>
+                <input class="form-control" type="password" id="password" name="password" placeholder="Digite sua Senha">
             </div>
-            <div class="formulario row">
-                <button class="primary-button" type="submit">login</button>
+            <div class="mb-3">
+                <button class="btn btn-primary" type="submit">login</button>
             </div>
         </section>
     </form>
