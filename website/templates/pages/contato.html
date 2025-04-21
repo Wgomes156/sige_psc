@@ -1,4 +1,10 @@
 {% extends "layouts/base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/contato.css' %}">
+{% endblock %}
+
 {%block content%}
 <section class="banner" id="content-main">
     <section id="content">
@@ -11,7 +17,7 @@
             </div>
         </section>
 
-        <section id="form-contact">
+        <section class="form-container">
             <div class="row formulario">
                 <input type="text" placeholder="Nome">
             </div>

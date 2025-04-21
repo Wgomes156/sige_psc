@@ -1,11 +1,17 @@
 {% extends "layouts/base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/cliente.css' %}">
+{% endblock %}
+
 {%block content%}
 
 <section class="banner" id="content-banner-user">
-    <form method="post" enctype="multipart/form-data" class="form-contact">
+    <form method="post" enctype="multipart/form-data" class="form-container">
         {%csrf_token%}
         <section>
-            <div class="row formulario-gen">
+            <div class="mb-3">
                 {{form.as_p}}
             </div>
             

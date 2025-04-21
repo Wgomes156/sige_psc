@@ -48,26 +48,6 @@
     text-transform: none;
 }
 
-#form-contact {
-    background-color: #ffffff;
-    padding: 30px;
-    border-radius: 4px;
-    box-shadow: -1px 0px 20px 0px rgba(0, 0, 0, 0.11);
-    width: 30em;
-}
-
-.row {
-    margin-bottom: 2em;
-}
-
-.row label {
-    color: black;
-}
-
-.row button {
-    width: 100%;
-}
-
 @media (max-width: 768px) {
     #content {
         flex-direction: column;

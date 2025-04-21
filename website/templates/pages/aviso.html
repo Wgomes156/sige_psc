@@ -1,4 +1,10 @@
 {% extends "layouts/base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/aviso.css' %}">
+{% endblock %}
+
 {%block content%}
 <section id="politicas_privacidade">
     <h1>Políticas de privacidade</h1>
