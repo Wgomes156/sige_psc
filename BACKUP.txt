@@ -1,0 +1,90 @@
+formulario da home:
+
+<section id="_7">
+    <div id="container_form">
+        <h2>Quer melhorar seus resultados?</h2>
+        <span>Receba um diagnóstico gratuito</span>
+        <hr class="divider">
+
+        <h3>Preencha os campos abaixo, vamos entrar em contato.</h3>
+
+        <div>
+            <form>
+                <div class="formulario">
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome" placeholder="Nome">
+                </div>
+                <div class="formulario">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Email">
+                </div>
+                <div class="formulario">
+                    <label for="empresa">Empresa</label>
+                    <input type="text" id="empresa" placeholder="Empresa">
+                </div>
+                <div class="formulario">
+                    <label for="cargo">Cargo</label>
+                    <input type="text" id="cargo" placeholder="Cargo">
+                </div>
+                <div class="formulario">
+                    <label for="descricao">Deixe sua mensagem</label>
+                    <textarea id="descricao" placeholder="Compartilhe conosco o seu objetivo"></textarea>
+                </div>
+                <div class="formulario_checkbox">
+                    <input type="checkbox" id="lgpd">
+                    <label for="lgpd">Conforme LGPD, trataremos seus dados com a finalidade de responder ao seu e-mail
+                        após seus contato. Clique aqui para acessar o <a href="/aviso">Aviso de privacidade</a></label>
+                </div>
+
+                <div class="formulario">
+                    <button class="primary-button">Solicite sua demonstração</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+css formulario da home:
+
+
+main #_7 {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3em;
+}
+
+main #_7 div {
+    margin-top: 1em;
+}
+
+main #_7 #container_form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40em;
+    padding: 5em;
+}
+
+main #_7 #container_form h2 {
+    font-family: "Poppins", Sans-serif;
+    font-size: 35px;
+    font-weight: 100;
+    color: #000000;
+}
+
+main #_7 #container_form span {
+    font-family: "Poppins", Sans-serif;
+    font-size: 25px;
+    font-weight: 500;
+    color: #000000;
+    margin-bottom: 2vh;
+}
+
+main #_7 #container_form h3 { 
+    margin-top: 2vh;
+    font-family: "Poppins", Sans-serif;
+    font-size: 25px;
+    font-weight: 100;
+    color: #000000;
+    text-align: center;
+}

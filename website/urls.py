@@ -1,6 +1,8 @@
 from django.urls import path, include
 from website import views
 from django.conf.urls.static import static
+from django.contrib.auth import views as auth_views
+
 #Caminhos do menu novo
 urlpatterns = [
     path('', views.index, name="index"),
