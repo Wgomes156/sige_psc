@@ -6,7 +6,7 @@ from django.contrib.auth import views as auth_views
 #Caminhos do menu novo
 urlpatterns = [
     path('', views.index, name="index"),
-    path("login", views.loginview),
+    path("login/", views.loginview),
     path("cliente", views.create_user, name="criar-usuario"),
     path("cadastros", views.create_user_adm),
     path("sobre", views.about),

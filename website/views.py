@@ -4,6 +4,7 @@ from .forms import UserForm, CreateUserForm
 from .models import User, MensagemContato
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.decorators import login_required, user_passes_test
+from django.contrib import messages
 
 # Create your views here.
 def index(request):
@@ -41,7 +42,8 @@ def loginview(request):
         login(request, user)
         return redirect("criar-usuario")
     else:
-        return render(request, "login.html", context={"erro_message": "Usuário não cadastrado!"})
+        messages.error(request, 'Email ou Senha inválida. Tente novamente.')
+        return render(request, "pages/login.html")
 
 @login_required
 def create_user(request):

@@ -59,7 +59,9 @@ ROOT_URLCONF = 'sige_psc.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            BASE_DIR / 'templates',
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -110,7 +112,6 @@ AUTH_PASSWORD_VALIDATORS = [
 LOGIN_URL="/login"
 LOGOUT_REDIRECT_URL = '/'
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
@@ -143,3 +144,5 @@ USE_I18N = True
 USE_L10N = True
 USE_TZ = True
 DATE_INPUT_FORMATS = ('%d/%m/%Y','%Y-%m-%d')
+
+APPEND_SLASH = True
