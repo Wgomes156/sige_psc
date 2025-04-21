@@ -187,24 +187,6 @@
     display: none;
 }
 
-.formulario-gen {
-    display: flex;
-    flex-direction: column;
-}
-
-.formulario-gen p label {
-    color: #7a7a7a;
-}
-
-.formulario-gen p input[type="text"], [type="email"], [type="password"], [type="date"], [type="file"], textarea {
-    background-color: #ffffff;
-    border-color: #02010129;
-    border-radius: 5px;
-    padding: 12px;
-    width: 94%;
-    margin-bottom: 2em;
-}
-
 .row {
     margin-bottom: 2em;
 }
@@ -326,6 +308,19 @@
     text-align: center;
 
     margin-bottom: 1em;
+}
+
+.form-container p label {
+    color: #7a7a7a;
+}
+
+.form-container p input[type="text"], [type="email"], [type="password"], [type="date"], [type="file"], textarea, select {
+    background-color: #ffffff;
+    border-color: #02010129;
+    border-radius: 5px;
+    padding: 12px;
+    width: 94%;
+    margin-bottom: 2em;
 }
 
 @media (max-width: 610px) {

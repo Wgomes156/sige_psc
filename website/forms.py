@@ -5,20 +5,22 @@ class DateInput(forms.DateInput):
 
 class UserForm (forms.ModelForm):
     class Meta: 
-        
         model = User
         fields = [
             "first_name",
             "last_name",
             "telefone",
             "data_nasc",
+            "tipo_pix",
             "dados_pix",
             "cpf",
             "foto_cadastro",
             "doc_pdf"
         ]
         widgets={
-            "data_nasc": DateInput()
+            "data_nasc": DateInput(),
+            'tipo_pix': forms.Select(attrs={'id': 'tipo-pix', 'class': 'form-label'}),
+            'dados_pix': forms.TextInput(attrs={'id': 'dados-pix', 'class': 'form-label'}),
         }
     # data_nasc = forms.DateField(
     #     required=True,
@@ -29,6 +31,4 @@ class UserForm (forms.ModelForm):
 class CreateUserForm (forms.ModelForm):
     class Meta: 
         model = User
-        fields = [
-            "email",
-                        ]
+        fields = ["email"]

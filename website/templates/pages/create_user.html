@@ -9,17 +9,47 @@
 
 <section class="banner" id="content-banner-user">
     <form method="post" enctype="multipart/form-data" class="form-container">
-        {%csrf_token%}
-        <section>
-            <div class="mb-3">
-                {{form.as_p}}
-            </div>
+    {%csrf_token%}
+            {{form.as_p}}
             
-            <div class="row formulario">
-                <button class="primary-button" type="submit"> Salvar</button>
-            </div>
-        </section>
+        <div class="row formulario">
+            <button class="primary-button" type="submit"> Salvar</button>
+        </div>
     </form>
 </section>
+
+<script src="https://unpkg.com/imask@7.6.1/dist/imask.js"></script>
+<script>
+    const tipoPix = document.getElementById('tipo-pix');
+    const dadosPix = document.getElementById('dados-pix');
+
+    let mask;
+
+    const masks = {
+        telefone: { mask: '(00) 00000-0000' },
+        cpf: { mask: '000.000.000-00' },
+        email: null // sem máscara para email
+    };
+
+    function aplicarMascara(tipo) {
+        if (mask) mask.destroy();
+
+        const config = masks[tipo];
+        if (config) {
+            mask = IMask(dadosPix, config);
+        } else {
+            dadosPix.value = ''; // limpa input
+        }
+    }
+
+    tipoPix.addEventListener('change', (e) => {
+        aplicarMascara(e.target.value);
+    });
+
+    // aplicar máscara inicial se necessário
+    if (tipoPix.value) {
+        aplicarMascara(tipoPix.value);
+    }
+</script>
 
 {%endblock content%}
