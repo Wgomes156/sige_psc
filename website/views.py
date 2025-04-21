@@ -8,10 +8,12 @@ from django.contrib import messages
 
 # Create your views here.
 def index(request):
-    return render(request, "pages/home.html")
+    current_page = 'index'
+    return render(request, "pages/home.html", {'current_page': current_page})
 
 def about(request):
-    return render(request, "pages/sobre.html")
+    current_page = 'sobre'
+    return render(request, "pages/sobre.html", {'current_page': current_page})
 
 def contato(request):
     if request.method == "POST":
@@ -26,7 +28,8 @@ def contato(request):
     return render(request, "pages/contato.html")
 
 def aviso(request):
-    return render(request, "pages/aviso.html")
+    current_page = 'aviso'
+    return render(request, "pages/aviso.html", {'current_page': current_page})
 
 def loginview(request):
     if request.user.is_authenticated:

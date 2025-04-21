@@ -47,10 +47,10 @@
                 </a>
 
                 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                    <li><a class="nav-link px-2 link-body-emphasis" href="/">Home</a></li>
-                    <li><a class="nav-link px-2 link-body-emphasis" href="/sobre">Sobre Nós</a></li>
-                    <li><a class="nav-link px-2 link-body-emphasis" href="/contato">Contatos</a></li>
-                    <li><a class="nav-link px-2 link-body-emphasis" href="/aviso">Avisos de privacidade</a></li>
+                    <li><a class="nav-link px-2 link-body-emphasis {% if current_page == 'index' %}active{% endif %}" href="/">Home</a></li>
+                    <li><a class="nav-link px-2 link-body-emphasis {% if current_page == 'sobre' %}active{% endif %}" href="/sobre">Sobre Nós</a></li>
+                    <li><a class="nav-link px-2 link-body-emphasis {% if current_page == 'contato' %}active{% endif %}" href="/contato">Contatos</a></li>
+                    <li><a class="nav-link px-2 link-body-emphasis {% if current_page == 'aviso' %}active{% endif %}" href="/aviso">Avisos de privacidade</a></li>
                 </ul>
                 {% if user.is_authenticated %}
                 <section class="dropdown text-end">
