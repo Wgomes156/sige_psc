@@ -18,20 +18,22 @@
         </section>
 
         <section class="form-container">
+            <form action="/contato" method="post">
+                {% csrf_token %}
             <div class="row formulario">
-                <input type="text" placeholder="Nome">
+                <input type="text" placeholder="Nome" name="nome">
             </div>
             
             <div class="row formulario">
-                <input type="text" placeholder="Email">
+                <input type="text" placeholder="Email" name="email">
             </div>
 
             <div class="row formulario">
-                <input type="text" placeholder="Assunto">
+                <input type="text" placeholder="Assunto" name="assunto">
             </div>
 
             <div class="row formulario">
-                <textarea id="descricao" placeholder="Messagem"></textarea>
+                <textarea id="descricao" placeholder="Messagem" name="mensagem"></textarea>
             </div>
             <div class="formulario_checkbox row">
                 <input type="checkbox" id="lgpd">
@@ -41,6 +43,7 @@
             <div class="row">
                 <button class="primary-button">Entrar em contato</button>
             </div>
+        </form>
         </section>
 
     </section>
