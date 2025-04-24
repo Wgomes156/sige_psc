@@ -55,3 +55,12 @@ class User(AbstractUser):
         return self.email
     def is_adm(self):
         return self.groups.filter(name="adm").exists()
+
+class MensagemContato(models.Model):
+    nome = models.CharField(max_length=100)
+    email = models.EmailField()
+    assunto = models.CharField(max_length=100)
+    mensagem = models.TextField()
+
+    def __str__(self):
+        return self.nome        

@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, HttpResponse
 from django.contrib.auth import authenticate, login
 from .forms import UserForm, CreateUserForm
-from .models import User 
+from .models import User, MensagemContato
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.decorators import login_required, user_passes_test
 
@@ -13,6 +13,15 @@ def about(request):
     return render(request, "pages/sobre.html")
 
 def contato(request):
+    if request.method == "POST":
+        nome = request.POST.get("nome")
+        email = request.POST.get("email")
+        assunto = request.POST.get("assunto")
+        mensagem = request.POST.get("mensagem")
+        # Validar forumário e inserir no banco de dados
+        mensagem_contato = MensagemContato.objects.create(nome=nome, email=email, assunto=assunto, mensagem=mensagem)
+        mensagem_contato.save()
+        return render(request, "pages/contato.html", {"success": True})
     return render(request, "pages/contato.html")
 
 def aviso(request):
@@ -59,11 +68,3 @@ def create_user_adm(request):
             form.save()
             return HttpResponse("Usuário criado com sucesso\nsenha do usuário: "+password)
     return render(request,"pages/create_user.html", {"form":form })
-
-# @login_required
-# def foto_perfil(request):
-#     if request.method=="GET":
-#         if request.user.is_authenticated:
-#             with request.user.foto_cadastro.open("r") as f:
-#                 return HttpResponse(f,content_type="image/jpg" )
-#     return HttpResponse("error", status=401)
