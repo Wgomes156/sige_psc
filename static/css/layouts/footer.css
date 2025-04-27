@@ -11,7 +11,7 @@ footer #footer-cta #linebgoverlay {
     opacity: 0.9;
     transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
     padding-top: 60px;
-    min-height: 580px;
+    min-height: 50vh;
 }
 
 footer #footer-cta #footer_container {
@@ -96,6 +96,13 @@ footer #footer-info p {
     font-size: 14px;
     font-weight: 200;
     text-align: center;
+}
+
+.links-footer ul li a {
+    text-decoration: none;
+    color: white;
+    font-family: "Poppins", Sans-serif;
+    font-weight: 200;
 }
 
 @media (max-width: 768px) {
