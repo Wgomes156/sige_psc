@@ -39,7 +39,11 @@
                     </div>
 
                     <div class="card-body card-action">
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="ConsultaEmpresarialModal">SAIBA MAIS</button>
+                        <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ConsultaEmpresarialModal">SAIBA MAIS</button> -->
+                         <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ConsultoriaEmpresarialModal">
+                            SAIBA MAIS
+                        </button>
                     </div>
                 </div>
             </li>
@@ -53,7 +57,10 @@
                     </div>
 
                     <div class="card-body card-action">
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="ConsultaEmpresarialModal">SAIBA MAIS</button>
+                        <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ConsultaEmpresarialModal">SAIBA MAIS</button> -->
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#gerenciamentoProjetosModal">
+                            SAIBA MAIS
+                        </button>
                     </div>
                 </div>
             </li>
@@ -67,7 +74,10 @@
                     </div>
 
                     <div class="card-body card-action">
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="ConsultaEmpresarialModal">SAIBA MAIS</button>
+                        <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ConsultaEmpresarialModal">SAIBA MAIS</button> -->
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#investigacaoEmpresarialModal">
+                            SAIBA MAIS
+                        </button>
                     </div>
                 </div>
             </li>
@@ -81,7 +91,10 @@
                     </div>
 
                     <div class="card-body card-action">
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="ConsultaEmpresarialModal">SAIBA MAIS</button>
+                        <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ConsultaEmpresarialModal">SAIBA MAIS</button> -->
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#treinamentoColaboradoresModal">
+                            SAIBA MAIS
+                        </button>
                     </div>
                 </div>
             </li>
@@ -95,7 +108,10 @@
                     </div>
 
                     <div class="card-body card-action">
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="ConsultaEmpresarialModal">SAIBA MAIS</button>
+                        <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ConsultaEmpresarialModal">SAIBA MAIS</button> -->
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#consultoriaModal">
+                            SAIBA MAIS
+                        </button>
                     </div>
                 </div>
             </li>
@@ -261,21 +277,72 @@
 </section>
 
 <!-- Modal -->
-<div class="modal fade" id="ConsultaEmpresarialModal" tabindex="-1" role="dialog" aria-labelledby="ConsultaEmpresarialModalTitle"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
+<div class="modal fade" id="ConsultoriaEmpresarialModal" tabindex="-1" aria-labelledby="ConsultoriaEmpresarialLabel" aria-hidden="true">
+    <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="ConsultaEmpresarialModalTitle">Consulta Empresarial</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+                <h1 class="modal-title fs-5" id="ConsultoriaEmpresarialLabel">Consultoria Empresarial</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 ...
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="gerenciamentoProjetosModal" tabindex="-1" aria-labelledby="gerenciamentoProjetosLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="gerenciamentoProjetosLabel">Gerenciamento de Projetos</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="investigacaoEmpresarialModal" tabindex="-1" aria-labelledby="investigacaoEmpresarialLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="investigacaoEmpresarialLabel">Investigação Empresarial</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="treinamentoColaboradoresModal" tabindex="-1" aria-labelledby="treinamentoColaboradoresLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="treinamentoColaboradoresLabel">Treinamento e capacitação dos colaboradores</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="consultoriaModal" tabindex="-1" aria-labelledby="consultoriaLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="consultoriaLabel">Consultoria e implementação de compliance</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                ...
             </div>
         </div>
     </div>

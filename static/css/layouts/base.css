@@ -321,7 +321,7 @@
 }
 
 .nav li:hover,
-.nav li:active {
+.active {
     border-bottom: 4px solid #022946;
 }
 
