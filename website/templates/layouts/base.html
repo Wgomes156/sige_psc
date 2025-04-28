@@ -33,8 +33,7 @@
         <section id="header-top">
             <p>Encarregado de Dados: dpo@grupoadaptalia.com.br</p>
             <ul class="social-links" aria-label="Redes sociais">
-                <li><a href="http://linkedin.com/company/psc-service/" target="_blank" aria-label="LinkedIn"><i
-                            class="fa fa-linkedin"></i></a></li>
+                <li><a href="http://linkedin.com/company/psc-service/" target="_blank" aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a></li>
                 <li><a href="#" aria-label="Instagram"><i class="fa fa-instagram"></i></a></li>
                 <li><a href="#" aria-label="Facebook"><i class="fa fa-facebook"></i></a></li>
             </ul>
@@ -60,7 +59,11 @@
                 <section class="dropdown text-end">
                     <a class="d-block link-body-emphasis text-decoration-none dropdown-toggle" href="#"
                         data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+                        {% if user.foto_cadastro %}
+                            <img src="{{user.foto_cadastro.url}}" alt="mdo" width="52" class="rounded-circle">
+                            {% else %}
+                            <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+                        {% endif %}
                     </a>
                     <ul class="dropdown-menu text-small">
                         <li>
@@ -142,8 +145,7 @@
                 </div>
                 <div>
                     <ul class="social-links" aria-label="Redes sociais">
-                        <li><a href="http://linkedin.com/company/psc-service/" target="_blank" aria-label="LinkedIn"><i
-                                    class="fa fa-linkedin"></i></a></li>
+                        <li><a href="http://linkedin.com/company/psc-service/" target="_blank" aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a></li>
                         <li><a href="#" aria-label="Instagram"><i class="fa fa-instagram"></i></a></li>
                         <li><a href="#" aria-label="Facebook"><i class="fa fa-facebook"></i></a></li>
                     </ul>

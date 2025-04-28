@@ -16,6 +16,8 @@ def about(request):
     return render(request, "pages/sobre.html", {'current_page': current_page})
 
 def contato(request):
+    current_page = 'contato'
+
     if request.method == "POST":
         nome = request.POST.get("nome")
         email = request.POST.get("email")
@@ -24,8 +26,8 @@ def contato(request):
         # Validar forumário e inserir no banco de dados
         mensagem_contato = MensagemContato.objects.create(nome=nome, email=email, assunto=assunto, mensagem=mensagem)
         mensagem_contato.save()
-        return render(request, "pages/contato.html", {"success": True})
-    return render(request, "pages/contato.html")
+        return render(request, "pages/contato.html", {"success": True}, {'current_page': current_page})
+    return render(request, "pages/contato.html", {'current_page': current_page})
 
 def aviso(request):
     current_page = 'aviso'

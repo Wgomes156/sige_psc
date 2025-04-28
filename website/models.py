@@ -44,7 +44,7 @@ TIPO_PIX_CHOICES = (
 
 # Create your models here.
 class User(AbstractUser):
-    telefone = models.CharField(max_length=100,default="0")
+    telefone = models.CharField(max_length=100)
     data_nasc = models.DateField(null = True)
     tipo_pix = models.CharField(max_length=3, null=True, choices=TIPO_PIX_CHOICES)
     dados_pix = models.CharField(max_length=100, null = True)

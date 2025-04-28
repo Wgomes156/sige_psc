@@ -89,7 +89,6 @@
     padding: 30px;
     flex: 1 1 20rem;
     width: 20rem;
-    height: 27vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -290,7 +289,7 @@
     padding: 30px;
     border-radius: 4px;
     box-shadow: -1px 0px 20px 0px rgba(0, 0, 0, 0.11);
-    width: 30em;
+    width: 50vw;
     min-height: 20vh;
     margin-top: 5em;
     margin-bottom: 5em;
@@ -318,6 +317,11 @@
     padding: 12px;
     width: 94%;
     margin-bottom: 2em;
+}
+
+nav {
+    padding-top: 1em;
+    padding-bottom: 1em;
 }
 
 .nav li:hover,

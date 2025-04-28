@@ -18,15 +18,14 @@ class UserForm (forms.ModelForm):
             "doc_pdf"
         ]
         widgets={
+            'first_name': forms.TextInput(attrs={'id': 'first_name', 'class': 'form-control'}),
+            'last_name': forms.TextInput(attrs={'id': 'last_name', 'class': 'form-control'}),
+            'telefone': forms.TextInput(attrs={'id': 'telefone', 'class': 'form-control', 'placeholder': '(00) 00000-0000'}),
             "data_nasc": DateInput(),
-            'tipo_pix': forms.Select(attrs={'id': 'tipo-pix', 'class': 'form-label'}),
-            'dados_pix': forms.TextInput(attrs={'id': 'dados-pix', 'class': 'form-label'}),
+            'tipo_pix': forms.Select(attrs={'id': 'tipo-pix', 'class': 'form-select'}),
+            'dados_pix': forms.TextInput(attrs={'id': 'dados-pix', 'class': 'form-control'}),
+            'cpf': forms.TextInput(attrs={'id': 'cpf', 'class': 'form-control', 'placeholder': '000.000.000-00'}),
         }
-    # data_nasc = forms.DateField(
-    #     required=True,
-    #     input_formats=["%d/%m/%Y", "%Y-%m-%d"],
-    #     widget=DateInput()
-    # )
 
 class CreateUserForm (forms.ModelForm):
     class Meta: 
