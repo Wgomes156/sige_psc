@@ -24,6 +24,7 @@
     padding: 20px;
     color: white;
     font-weight: bold;
+    text-decoration: none;
 }
 
 .button-link-outline {
@@ -327,6 +328,10 @@ nav {
 .nav li:hover,
 .active {
     border-bottom: 4px solid #022946;
+}
+
+.info-list li {
+    list-style-type: disclosure-closed;
 }
 
 @media (max-width: 610px) {

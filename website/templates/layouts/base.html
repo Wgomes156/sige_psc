@@ -62,7 +62,7 @@
                         {% if user.foto_cadastro %}
                             <img src="{{user.foto_cadastro.url}}" alt="mdo" width="52" class="rounded-circle">
                             {% else %}
-                            <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+                            <img src="{% static 'img/default_user.png' %}" alt="mdo" width="32" height="32" class="rounded-circle">
                         {% endif %}
                     </a>
                     <ul class="dropdown-menu text-small">
@@ -114,8 +114,7 @@
                 <p>Estamos comprometidos em ser uma referência em excelência na prestação de serviços, trazendo soluções
                     e resultados tangíveis para nossos clientes.</p>
                 <div class="footer-buttons">
-                    <a href="https://api.whatsapp.com/send/?phone=5521971573947&text&type=phone_number&app_absent=0"
-                        target="_blank" class="primary-button">ENTRAR EM CONTATO</a>
+                    <a href="/contato" class="primary-button">ENTRAR EM CONTATO</a>
                     <!-- <a href="#" class="secund-button">RECEBA DIAGNÓSTICO</a> -->
                 </div>
             </div>
