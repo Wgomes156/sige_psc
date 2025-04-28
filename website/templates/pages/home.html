@@ -14,7 +14,8 @@
             <p class="text-paragrafo">Nossa abordagem é centrada nas necessidades do cliente, possibilitando resultados
                 consistentes e alinhados
                 aos seus objetivos imediatos.</p>
-            <a href="https://api.whatsapp.com/send/?phone=5521971573947&text&type=phone_number&app_absent=0" target="_blank" class="button-link">ENTRE EM CONTATO CONOSCO</a>
+            <a href="https://api.whatsapp.com/send/?phone=5521971573947&text&type=phone_number&app_absent=0"
+                target="_blank" class="button-link">FALE NO WHATSAPP</a>
         </div>
     </div>
 </section>
@@ -29,51 +30,83 @@
     <section class="deck">
         <ul>
             <li>
-                <div class="card-primary">
-                    <img src="{% static 'img/cards/prin/consultoria.jpeg'%}" alt="#">
-                    <h3>Consultoria Empresarial</h3>
-                    <p>Soluções personalizadas em análise de dados, auditoria antifraude, logística e organizção de
-                        eventos</p>
+                <div class="card">
+                    <img class="card-img-top" src="{% static 'img/cards/prin/consultoria.jpeg'%}"
+                        alt="Card Consultoria empresarial">
+                    <div class="card-body">
+                        <h5 class="card-title">Consultoria Empresarial</h5>
+                        <p class="card-text">Soluções personalizadas em análise de dados, auditoria antifraude, logística e organizção de eventos</p>
+                    </div>
 
-                    <a href="#">SAIBA MAIS</a>
+                    <div class="card-body card-action">
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ConsultoriaEmpresarialModal">
+                            SAIBA MAIS
+                        </button>
+                    </div>
                 </div>
             </li>
             <li>
-                <div class="card-primary">
-                    <img src="{% static 'img/cards/prin/gerenciamento.png'%}" alt="#">
-                    <h3>Gerenciamento de Projetos</h3>
-                    <p>Gerenciamento estratégico de tarefas para o alcance de metas com eficiência</p>
+                <div class="card">
+                    <img class="card-img-top" src="{% static 'img/cards/prin/gerenciamento.png'%}"
+                        alt="Card gerenciamento de projetos">
+                    <div class="card-body">
+                        <h5 class="card-title">Gerenciamento de Projetos</h5>
+                        <p class="card-text">Gerenciamento estratégico de tarefas para o alcance de metas com eficiência.</p>
+                    </div>
 
-                    <a href="#">SAIBA MAIS</a>
+                    <div class="card-body card-action">
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#gerenciamentoProjetosModal">
+                            SAIBA MAIS
+                        </button>
+                    </div>
                 </div>
             </li>
             <li>
-                <div class="card-primary">
-                    <img src="{% static 'img/cards/prin/investigacao.png'%}" alt="#">
-                    <h3>Investigação Empresarial</h3>
-                    <p>Coleta e análise de dados, validação de informações e elaboração de relatórios detalhados.</p>
+                <div class="card">
+                    <img class="card-img-top" src="{% static 'img/cards/prin/investigacao.png'%}"
+                        alt="Card investigaçãoo empresarial">
+                    <div class="card-body">
+                        <h5 class="card-title">Investigação Empresarial</h5>
+                        <p class="card-text">Coleta e análise de dados, validação de informações e elaboração de relatórios detalhados.</p>
+                    </div>
 
-                    <a href="#">SAIBA MAIS</a>
+                    <div class="card-body card-action">
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#investigacaoEmpresarialModal">
+                            SAIBA MAIS
+                        </button>
+                    </div>
                 </div>
             </li>
             <li>
-                <div class="card-primary">
-                    <img src="{% static 'img/cards/prin/treinamento.png'%}" alt="#">
-                    <h3>Treinamento e capacitação dos colaboradores</h3>
-                    <p>Oferecemos programas de treinamento personalizados para capacitar colaboradores de acordo com as
-                        necessidades específicas de cada cliente e setor.</p>
+                <div class="card">
+                    <img class="card-img-top" src="{% static 'img/cards/prin/treinamento.png'%}"
+                        alt="Card treinamento dos colaboradores">
+                    <div class="card-body">
+                        <h5 class="card-title">Treinamento e capacitação dos colaboradores</h5>
+                        <p class="card-text">Oferecemos programas de treinamento personalizados para capacitar colaboradores de acordo com as necessidades específicas de cada cliente e setor.</p>
+                    </div>
 
-                    <a href="#">SAIBA MAIS</a>
+                    <div class="card-body card-action">
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#treinamentoColaboradoresModal">
+                            SAIBA MAIS
+                        </button>
+                    </div>
                 </div>
             </li>
             <li>
-                <div class="card-primary">
-                    <img src="{% static 'img/cards/prin/consultoria.jpg'%}" alt="#">
-                    <h3>Consultoria e implementação de compliance</h3>
-                    <p>Desenvolvemos e implementamos estruturas de compliance personalizadas para empresas de diferentes
-                        portes e segmentos.</p>
+                <div class="card">
+                    <img class="card-img-top" src="{% static 'img/cards/prin/consultoria.jpg'%}"
+                        alt="Card consultoria de compliance">
+                    <div class="card-body">
+                        <h5 class="card-title">Consultoria e implementação de compliance</h5>
+                        <p class="card-text">Desenvolvemos e implementamos estruturas de compliance personalizadas para empresas de diferentes portes e segmentos.</p>
+                    </div>
 
-                    <a href="#">SAIBA MAIS</a>
+                    <div class="card-body card-action">
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#consultoriaModal">
+                            SAIBA MAIS
+                        </button>
+                    </div>
                 </div>
             </li>
         </ul>
@@ -82,14 +115,15 @@
 
 <section id="_3">
     <div class="banner">
-        <h2>PSC Service: Sua Parceira em Gestão Empresarial</h2>
+        <h2 class="headling-title"><span style="color: #fc8d0a">PSC Service:</span> Sua Parceira em Gestão Empresarial</h2>
         <p class="text-paragrafo">
             Na PSC Service, estamos dedicados a liderar o caminho em gestão empresarial com uma forte ênfase em
             planejamento organizacional. Nosso compromisso é claro: fornecer soluções inteligentes e eficazes que
             impulsionem o crescimento e o sucesso de nossos clientes.
         </p>
 
-        <a href="https://api.whatsapp.com/send/?phone=5521971573947&text&type=phone_number&app_absent=0" target="_blank" class="button-link">ENTRE EM CONTATO CONOSCO</a>
+        <a href="https://api.whatsapp.com/send/?phone=5521971573947&text&type=phone_number&app_absent=0" target="_blank"
+            class="button-link">FALE NO WHATSAPP</a>
     </div>
 </section>
 
@@ -235,5 +269,278 @@
         </section>
     </div>
 </section>
+
+<!-- Modal -->
+<div class="modal fade" id="ConsultoriaEmpresarialModal" tabindex="-1" aria-labelledby="ConsultoriaEmpresarialLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="ConsultoriaEmpresarialLabel">Consultoria Empresarial</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    A consultoria da PSC oferece soluções estratégicas personalizadas para otimizar processos, melhorar a eficiência operacional e apoiar o crescimento sustentável do seu negócio.
+                </p>
+                <p>
+                    Com expertise em diversas áreas, auxiliamos sua empresa a superar desafios e alcançar objetivos, garantindo resultados eficazes e de longo prazo.
+                </p>
+                <p>
+                    A chave para o sucesso empresarial está na gestão estratégica e no desenvolvimento de pessoas, oferecemos soluções sob medida para otimizar processos, fortalecer a cultura organizacional e garantir que sua empresa alcance resultados sólidos e sustentáveis.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="gerenciamentoProjetosModal" tabindex="-1" aria-labelledby="gerenciamentoProjetosLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="gerenciamentoProjetosLabel">Gerenciamento de Projetos</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    Nossa abordagem é centrada
+                    nas necessidades do cliente,
+                    possibilitando resultados
+                    consistentes e alinhados aos
+                    seus objetivos imediatos.
+                    Cada empresa é única e
+                    merece ter uma prestação de
+                    serviços comprometida em
+                    fornecer soluções inovadoras e
+                    personalizadas para o sucesso
+                    e a eficiência do seu negócio.
+                </p>
+                    
+                <ul class="info-list">
+                    <li>
+                        <h6>Análise e Consultoria</h6>
+
+                        <p>
+                            Avaliação inicial para
+                            atender as necessidades,
+                            definir objetivos e criar uma
+                            base para o planejamento.
+                        </p>
+                    </li>
+
+                    <li>
+                        <h6>Planejamento</h6>
+
+                        <p>Realizamos o planejamento
+                            do projeto definindo metas
+                            claras, prazos realistas e
+                            recursos necessários.</p>
+                    </li>
+
+                    <li>
+                        <h6>Execução</h6>
+
+                        <p>Executamos o projeto
+                            conforme o plano
+                            estabelecido, monitorando
+                            continuamente o progresso
+                            e ajustando as estratégias
+                            conforme necessário.</p>
+                    </li>
+                    <li>
+                        <h6>Monitoramento</h6>
+
+                        <p>Acompanhamos os indicadores de
+                            desempenho, identificamos e
+                            corrigimos desvios, e mantemos
+                            todos os envolvidos informados
+                            sobre o progresso.</p>
+                    </li>
+                    <li>
+                        <h6>Controle</h6>
+
+                        <p>Realização de ajustes e
+                            correção necessarias com
+                            base no monitoramento,
+                            para garantir que o projeto
+                            permaneça dentro do
+                            escopo planejado.</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="investigacaoEmpresarialModal" tabindex="-1" aria-labelledby="investigacaoEmpresarialLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="investigacaoEmpresarialLabel">Investigação Empresarial</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <h6>TRASPARÊNCIA E SEGURANÇA</h6>
+                <p>
+                    A investigação empresarial visa identificar e
+                    prevenir fraudes, violações éticas e riscos à
+                    segurança, protegendo o patrimônio da empresa e
+                    promovendo uma cultura de transparência essencial
+                    para seu bom funcionamento.
+                </p>
+                    
+                <h6>IMPLEMENTAÇÃO EFICAZ</h6>
+                <ul class="info-list">
+                    <li>
+                        <strong>Identificação Rápida de Riscos:</strong> A implementação
+                        eficaz permite a detecção precoce de fraudes,
+                        violações éticas e riscos à segurança, garantindo que
+                        a empresa tome medidas corretivas rapidamente.
+                        
+                    </li>
+                    <li>
+                        <strong>Estratégias Personalizadas:</strong> A aplicação de métodos
+                        específicos para cada tipo de risco assegura que as
+                        investigações sejam mais assertivas, adaptando-se às
+                        necessidades e particularidades da empresa.
+                    </li>
+                </ul>
+                
+                <h6>BENEFÍCIOS PARA A ORGANIZAÇÃO</h6>
+                <ul class="info-list">
+                    <li>
+                        <strong>Mitigação de Riscos Operacionais e Legais:</strong> A
+                        investigação empresarial eficaz ajuda a identificar
+                        práticas inadequadas, fraudes ou violações internas,
+                        permitindo à empresa reduzir riscos legais,
+                        financeiros e operacionais.
+
+                    </li>
+                    <li>
+                        <strong>Aumento da Eficiência e Transparência:</strong> A
+                        investigação bem conduzida promove um ambiente
+                        de maior transparência, aprimorando a eficiência
+                        operacional e reforçando a cultura de ética e
+                        conformidade dentro da organização.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="treinamentoColaboradoresModal" tabindex="-1" aria-labelledby="treinamentoColaboradoresLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="treinamentoColaboradoresLabel">Treinamento e capacitação dos colaboradores</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <h6>POTENCIALIZANDO A QUALIFICAÇÃO E A MOTIVAÇÃO</h6>
+                <p>O treinamento corporativo é fundamental para
+                    desenvolver uma equipe capacitada, motivada e
+                    alinhada aos valores da empresa, promovendo tanto
+                    o crescimento individual quanto o aprimoramento
+                    contínuo da organização.</p>
+                    
+                <h6>ESTRATÉGIAS PARA IMPLEMENTAÇÃO</h6>
+                <ul class="info-list">
+                    <li>
+                        <strong>Programas Personalizados:</strong> Adapte os
+                        treinamentos às necessidades específicas dos
+                        colaboradores e aos desafios da empresa,
+                        assegurando que o aprendizado seja relevante e
+                        aplicável.
+                    </li>
+                    <li>
+                        <strong>Integração de Temas de Conformidade:</strong> Inclua
+                        temas de compliance nos treinamentos,
+                        abordando políticas internas, ética, privacidade
+                        de dados e regulamentos do setor.
+                    </li>
+                </ul>
+                
+                <h6>BENEFÍCIOS PARA A ORGANIZAÇÃO</h6>
+                <ul class="info-list">
+                    <li>
+                        <strong>Aumento da Rentabilidade e Eficiência Operacional:</strong> Investir em treinamento corporativo
+                        melhora a eficiência dos colaboradores, reduzindo
+                        falhas e custos desnecessários. Isso otimiza
+                        processos, aumenta a rentabilidade e torna a
+                        empresa mais competitiva, captando mais
+                        oportunidades e melhorando suas margens de
+                        lucro.
+                    </li>
+                    <li>
+                        <strong>Proteção da Imagem e Reputação Corporativa:</strong>
+                        Equipes bem treinadas e alinhadas com os valores
+                        da empresa fortalecem a imagem da marca,
+                        transmitindo competência e ética. Isso protege a
+                        reputação da empresa, especialmente em
+                        momentos de crise, garantindo respostas eficazes
+                        que minimizam danos à sua imagem.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="consultoriaModal" tabindex="-1" aria-labelledby="consultoriaLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="consultoriaLabel">Consultoria e implementação de compliance</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <h6>PROTEÇÃO CONTRA RISCOS E FORTALECIMENTO DA REPUTAÇÃO</h6>
+                <p>
+                    Compliance vai além de uma exigência legal; é um
+                    compromisso estratégico com a ética e a
+                    responsabilidade social. Um bom programa de
+                    compliance protege a empresa contra riscos, reforça
+                    a confiança do público e garante a conformidade com
+                    as melhores práticas
+                </p>
+                    
+                <h6>COMO IMPLEMENTAR</h6>
+                <ul class="info-list">
+                    <li>
+                        <strong>Cultura de Conformidade:</strong> O compliance deve ser
+                        uma responsabilidade compartilhada em todos os
+                        níveis da organização, com a liderança dando o
+                        exemplo e promovendo um ambiente ético.
+                    </li>
+                    <li>
+                        <strong>Monitoramento e Atualização Constante:</strong> Manter o
+                        programa de compliance atualizado é essencial
+                        para garantir que ele acompanhe as mudanças
+                        regulatórias e se adapte a novos desafios.
+                    </li>
+                </ul>
+                
+                <h6>BENEFÍCIOS PARA A ORGANIZAÇÃO</h6>
+                <ul class="info-list">
+                    <li>
+                        <strong>Proteção contra Riscos:</strong> Compliance é um
+                        compromisso estratégico que protege a empresa
+                        contra riscos legais e financeiros, garantindo
+                        práticas éticas e segurança jurídica.
+
+                    </li>
+                    <li>
+                        <strong>Fortalecimento da Reputação:</strong> Um programa de
+                        compliance bem estruturado reforça a confiança do
+                        público e assegura que a empresa siga as melhores
+                        práticas, fortalecendo sua imagem e reputação no
+                        mercado.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
 
 {%endblock content%}

@@ -4,15 +4,20 @@ from .forms import UserForm, CreateUserForm
 from .models import User, MensagemContato
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.decorators import login_required, user_passes_test
+from django.contrib import messages
 
 # Create your views here.
 def index(request):
-    return render(request, "pages/home.html")
+    current_page = 'index'
+    return render(request, "pages/home.html", {'current_page': current_page})
 
 def about(request):
-    return render(request, "pages/sobre.html")
+    current_page = 'sobre'
+    return render(request, "pages/sobre.html", {'current_page': current_page})
 
 def contato(request):
+    current_page = 'contato'
+
     if request.method == "POST":
         nome = request.POST.get("nome")
         email = request.POST.get("email")
@@ -21,11 +26,12 @@ def contato(request):
         # Validar forumário e inserir no banco de dados
         mensagem_contato = MensagemContato.objects.create(nome=nome, email=email, assunto=assunto, mensagem=mensagem)
         mensagem_contato.save()
-        return render(request, "pages/contato.html", {"success": True})
-    return render(request, "pages/contato.html")
+        return render(request, "pages/contato.html", {"success": True}, {'current_page': current_page})
+    return render(request, "pages/contato.html", {'current_page': current_page})
 
 def aviso(request):
-    return render(request, "pages/aviso.html")
+    current_page = 'aviso'
+    return render(request, "pages/aviso.html", {'current_page': current_page})
 
 def loginview(request):
     if request.user.is_authenticated:
@@ -41,7 +47,8 @@ def loginview(request):
         login(request, user)
         return redirect("criar-usuario")
     else:
-        return render(request, "login.html", context={"erro_message": "Usuário não cadastrado!"})
+        messages.error(request, 'Email ou Senha inválida. Tente novamente.')
+        return render(request, "pages/login.html")
 
 @login_required
 def create_user(request):

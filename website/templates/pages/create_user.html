@@ -9,17 +9,14 @@
 
 <section class="banner" id="content-banner-user">
     <form method="post" enctype="multipart/form-data" class="form-container">
-        {%csrf_token%}
-        <section>
-            <div class="mb-3">
-                {{form.as_p}}
-            </div>
+    {%csrf_token%}
+            {{form.as_p}}
             
-            <div class="row formulario">
-                <button class="primary-button" type="submit"> Salvar</button>
-            </div>
-        </section>
+        <div class="row formulario">
+            <button class="primary-button" type="submit"> Salvar</button>
+        </div>
     </form>
 </section>
+
 
 {%endblock content%}

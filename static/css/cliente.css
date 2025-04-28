@@ -7,6 +7,14 @@
     background-position: center right;
     background-size: cover;
 
+    display: flex;
     justify-content: flex;
     align-items: center;
 }
+
+/* background-color: white;
+border: 1px solid black;
+border-radius: 10px;
+width: 50%;
+margin-top: 5em;
+margin-bottom: 5em; */

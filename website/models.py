@@ -35,10 +35,18 @@ class CustomUserManager(BaseUserManager):
             raise ValueError(_('Superuser must have is_superuser=True.'))
         return self.create_user(email, password, **extra_fields)
 
+TIPO_PIX_CHOICES = (
+    ('', 'Selecione uma opção'),
+    ('tel', 'Telefone'),
+    ('mai', 'Email'),
+    ('doc', 'Documento'),
+)
+
 # Create your models here.
 class User(AbstractUser):
-    telefone = models.CharField(max_length=100,default="0")
+    telefone = models.CharField(max_length=100)
     data_nasc = models.DateField(null = True)
+    tipo_pix = models.CharField(max_length=3, null=True, choices=TIPO_PIX_CHOICES)
     dados_pix = models.CharField(max_length=100, null = True)
     cpf = models.CharField(max_length=100, null = True)
     USERNAME_FIELD="email"

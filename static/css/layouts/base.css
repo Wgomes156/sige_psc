@@ -24,6 +24,7 @@
     padding: 20px;
     color: white;
     font-weight: bold;
+    text-decoration: none;
 }
 
 .button-link-outline {
@@ -65,38 +66,33 @@
     padding: 16px 50px 16px 50px;
 }
 
-.card-primary {
-    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
-    transition: 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
-    margin: 20px;
-    --e-column-margin-right: 20px;
-    --e-column-margin-left: 20px;
-    padding: 10px 10px 0px 10px;
-    border-radius: 10px;
-    height: 100%;
-    text-align: center;
-    
+.card {
+    flex: 1 1 20rem;
+    width: 20rem;
+    height: 30rem;
+}
+
+.card-body {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    text-align: center;
 }
 
-.card-primary img {
-    max-width: 100%;
-    height: auto;
-}
-
-.card-primary a {
-    padding: 3em 0 2em 0;
+.card-action {
+    justify-content: flex-end;
 }
 
 .card-sec {
     box-shadow: 0px 8px 13px 0px rgba(0, 0, 0, 0.5);
     transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+    text-align: center;
     border-radius: 7px;
     padding: 30px;
-    text-align: center;
-    height: 80%;
+    flex: 1 1 20rem;
+    width: 20rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .card-sec:hover {
@@ -118,13 +114,11 @@
     margin-top: 1vh;
 }
 
-
 .banner {
     max-width: 100%; 
-    width: 80vw; 
+    width: 40rem; 
     margin-left: auto; 
     margin-right: auto;
-    /* color: white; */
 
     display: flex;
     align-items: flex-start;
@@ -135,14 +129,18 @@
 
 .deck {
     margin-top: 1vh;
-    padding: 10px;
+    padding: 1rem;
 }
 
 .deck ul {
     display: flex;
     flex-wrap: wrap;
-    gap: 3em;
+    gap: 1rem;
     justify-content: center;
+}
+
+.deck ul li {
+    display: flex;
 }
 
 .information {
@@ -163,7 +161,6 @@
 .headling-title {
     font-family: "Poppins", Sans-serif;
     font-size: 58px;
-    font-weight: 200;
     color: #FFFFFF;
 }
 
@@ -185,24 +182,6 @@
 
 .noshow {
     display: none;
-}
-
-.formulario-gen {
-    display: flex;
-    flex-direction: column;
-}
-
-.formulario-gen p label {
-    color: #7a7a7a;
-}
-
-.formulario-gen p input[type="text"], [type="email"], [type="password"], [type="date"], [type="file"], textarea {
-    background-color: #ffffff;
-    border-color: #02010129;
-    border-radius: 5px;
-    padding: 12px;
-    width: 94%;
-    margin-bottom: 2em;
 }
 
 .row {
@@ -311,7 +290,7 @@
     padding: 30px;
     border-radius: 4px;
     box-shadow: -1px 0px 20px 0px rgba(0, 0, 0, 0.11);
-    width: 30em;
+    width: 50vw;
     min-height: 20vh;
     margin-top: 5em;
     margin-bottom: 5em;
@@ -326,6 +305,33 @@
     text-align: center;
 
     margin-bottom: 1em;
+}
+
+.form-container p label {
+    color: #7a7a7a;
+}
+
+.form-container p input[type="text"], [type="email"], [type="password"], [type="date"], [type="file"], textarea, select {
+    background-color: #ffffff;
+    border-color: #02010129;
+    border-radius: 5px;
+    padding: 12px;
+    width: 94%;
+    margin-bottom: 2em;
+}
+
+nav {
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+.nav li:hover,
+.active {
+    border-bottom: 4px solid #022946;
+}
+
+.info-list li {
+    list-style-type: disclosure-closed;
 }
 
 @media (max-width: 610px) {
