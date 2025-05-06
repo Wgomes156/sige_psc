@@ -5,6 +5,7 @@ from .models import User, MensagemContato
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.contrib import messages
+from django.core.mail import send_mail
 
 # Create your views here.
 def index(request):
@@ -73,5 +74,16 @@ def create_user_adm(request):
             password=(User.objects.make_random_password())
             form.instance.set_password(password)
             form.save()
+
+            email = form.cleaned_data['email']
+            print(email)
+            
+            send_mail(
+                subject='Sua conta foi criada',
+                message=f'usuário criado com sucesso\nsenha do usuário: {password}',
+                from_email=None,  # Usa o DEFAULT_FROM_EMAIL
+                recipient_list=[email],
+                fail_silently=False,
+            )
             return HttpResponse("Usuário criado com sucesso\nsenha do usuário: "+password)
     return render(request,"pages/create_user.html", {"form":form })
