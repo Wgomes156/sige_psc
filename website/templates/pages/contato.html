@@ -33,7 +33,7 @@
             </div>
 
             <div class="row formulario">
-                <textarea id="descricao" placeholder="Messagem" name="mensagem"></textarea>
+                <textarea id="descricao" placeholder="Messagem" name="mensagem" rows="7"></textarea>
             </div>
             <div class="formulario_checkbox row">
                 <input type="checkbox" id="lgpd">
@@ -41,11 +41,13 @@
                     após seus contato. Clique aqui para acessar o <a href="/aviso">Aviso de privacidade</a></label>
             </div>
             <div class="row">
-                <button class="primary-button">Entrar em contato</button>
+                <button class="btn btn-primary disabled" id="contact">Entrar em contato</button>
             </div>
         </form>
         </section>
 
     </section>
 </section>
+
+<script src="{% static 'js/button-action.js' %}"></script>
 {%endblock%}
