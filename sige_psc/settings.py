@@ -149,14 +149,10 @@ APPEND_SLASH = True
 
 # Email
 
-# if DEBUG:
-#     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-# else: 
-#     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-
-# os.environ["SECRET_KEY"]
-
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+if DEBUG:
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+else: 
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 DEFAULT_FROM_EMAIL = os.environ["EMAIL_HOST_USER"]
 EMAIL_HOST_USER = os.environ["EMAIL_HOST_USER"]
