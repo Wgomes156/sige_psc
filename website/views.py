@@ -1,3 +1,5 @@
+import os
+from dotenv import load_dotenv, find_dotenv
 from django.shortcuts import render, redirect, HttpResponse
 from django.contrib.auth import authenticate, login
 from .forms import UserForm, CreateUserForm
@@ -24,10 +26,17 @@ def contato(request):
         email = request.POST.get("email")
         assunto = request.POST.get("assunto")
         mensagem = request.POST.get("mensagem")
+        email_empresa = os.environ["EMAIL_HOST_USER"]
         # Validar forumário e inserir no banco de dados
-        mensagem_contato = MensagemContato.objects.create(nome=nome, email=email, assunto=assunto, mensagem=mensagem)
-        mensagem_contato.save()
-        return render(request, "pages/contato.html", {"success": True}, {'current_page': current_page})
+        send_mail(
+                subject=assunto,
+                message=mensagem,
+                from_email=email,  # Usa o DEFAULT_FROM_EMAIL
+                recipient_list=[email_empresa],
+                fail_silently=False,
+            )
+        # return render(request, "pages/contato.html", {"success": True}, {'current_page': current_page})
+
     return render(request, "pages/contato.html", {'current_page': current_page})
 
 def aviso(request):
