@@ -11,7 +11,6 @@ class UserForm (forms.ModelForm):
             "last_name",
             "telefone",
             "data_nasc",
-            "tipo_pix",
             "dados_pix",
             "cpf",
             "foto_cadastro",
@@ -20,11 +19,10 @@ class UserForm (forms.ModelForm):
         widgets={
             'first_name': forms.TextInput(attrs={'id': 'first_name', 'class': 'form-control'}),
             'last_name': forms.TextInput(attrs={'id': 'last_name', 'class': 'form-control'}),
-            'telefone': forms.TextInput(attrs={'id': 'telefone', 'class': 'form-control', 'placeholder': '(00) 00000-0000'}),
+            'telefone': forms.TextInput(attrs={'id': 'telefone', 'class': 'form-control mask-telefone', 'placeholder': '(00) 00000-0000'}),
             "data_nasc": DateInput(),
-            'tipo_pix': forms.Select(attrs={'id': 'tipo-pix', 'class': 'form-select'}),
             'dados_pix': forms.TextInput(attrs={'id': 'dados-pix', 'class': 'form-control'}),
-            'cpf': forms.TextInput(attrs={'id': 'cpf', 'class': 'form-control', 'placeholder': '000.000.000-00'}),
+            'cpf': forms.TextInput(attrs={'id': 'cpf', 'class': 'form-control mask-cpf', 'placeholder': '000.000.000-00'}),
         }
 
 class CreateUserForm (forms.ModelForm):
