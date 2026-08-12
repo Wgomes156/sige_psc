@@ -1,0 +1,160 @@
+main #_1 {
+    background-color: #F8E1E1;
+    background-image: url(../img/banner_1.png);
+    background-position: center left;
+    background-size: cover;
+}
+
+main #_2 {
+    padding: 80px 0 80px 0;
+    width: 100%;
+}
+
+main #_2 #servicos {
+    text-align: center;
+}
+
+main #_2 div h2 {
+    margin-bottom: 12px;
+}
+
+main #_2 section ul li div h3 {
+    font-family: "Roboto", Sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #333333;
+}
+
+main #_2 section ul li div p {
+    text-align: justify;
+    color: #777777;
+    font-size: 0.875rem;
+    line-height: 1.617em;
+}
+
+main #_3 {
+    background-image: url(../img/banner_2.png);
+    background-position: center right;
+    background-size: cover;
+}
+
+main #_3 div {
+    min-height: 586px;
+}
+
+main #_4 {
+    padding: 100px 0 100px 0;
+}
+
+main #_4 h2 {
+    text-align: center;
+    font-family: "Montserrat", Sans-serif;
+    font-size: 35px;
+    font-weight: 200;
+    color: #072B47;
+    padding-left: 10vw;
+    padding-right: 10vw;
+}
+
+main #_4 section ul li {
+    width: 330px;
+}
+
+main #_5 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3vh;
+}
+
+main #_5 div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1vh;
+}
+
+main #_5 img {
+    width: 50%;
+}
+
+main #_5_1 {
+    margin-top: 4vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5vh;
+    padding-bottom: 12vh;
+}
+
+main #_5_1 div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1vh;
+}
+
+main #_5_1 img {
+    width: 70%;
+}
+
+main #_6 {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 80px 0px 80px 0px;
+
+    display: flex;
+    justify-content: center;
+}
+
+main #_6 div {
+    text-align: center;
+    width: 1140px;
+    padding: 3em;
+}
+
+main #_6 div h2 {
+    font-family: "Poppins", Sans-serif;
+    font-size: 42px;
+    font-weight: 700;
+    color: #FFFFFF;
+}
+
+main #_6 div h2 span {
+    color: #fc8d0a;
+}
+
+main #_6 div p {
+    text-align: center;
+    color: #FFFFFF;
+    font-family: "Poppins", Sans-serif;
+    font-size: 18px;
+    font-weight: 200;
+}
+
+main #_6 section {
+    margin-top: 2vh;
+}
+
+main #_6 section ul {
+    display: flex;
+    justify-content: center;
+    gap: 5vw;
+}
+
+main #_6 section ul li {
+    color: #FFFFFF;
+    font-family: "Poppins", Sans-serif;
+    font-size: 40px;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    main #_2 section ul li {
+        width: 430px;
+    }
+
+    main #_6 div section ul {
+        flex-direction: column;
+    }
+}

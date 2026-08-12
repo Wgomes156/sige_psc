@@ -1,0 +1,101 @@
+{% extends "layouts/base.html" %} {% load static %} {% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}" />
+{% endblock %} {%block content%}
+
+<section class="banner" id="content-banner">
+  {% if messages %}
+  <ul>
+    {% for message in messages %}
+    <li>{{ message }}</li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+
+  <form method="post" action="/login/" id="form-login" class="form-container">
+    {% csrf_token %}
+    <section>
+      <h2>Faça seu login</h2>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email address</label>
+        <input
+          class="form-control"
+          type="email"
+          id="email"
+          name="email"
+          placeholder="example@email.com"
+          aria-describedby="emailHelp"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Senha</label>
+        <div class="input-group">
+          <input
+            class="form-control"
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Digite sua Senha"
+          />
+          <button
+            class="btn btn-outline-secondary"
+            type="button"
+            id="toggle-password"
+            aria-label="Mostrar senha"
+            aria-pressed="false"
+          >
+            <i class="fa fa-eye" id="toggle-password-icon"></i>
+          </button>
+        </div>
+      </div>
+      <div class="mb-3 d-flex gap-2">
+        <button class="btn btn-primary" type="submit">login</button>
+        <button
+          class="btn btn-outline-secondary"
+          type="button"
+          id="btn-fechar-login"
+        >
+          Sair
+        </button>
+      </div>
+    </section>
+  </form>
+
+  <p style="color: red">{{erro_message}}</p>
+</section>
+
+<script>
+  document
+    .getElementById("toggle-password")
+    .addEventListener("click", function () {
+      const passwordInput = document.getElementById("password");
+      const icon = document.getElementById("toggle-password-icon");
+      const isPassword = passwordInput.type === "password";
+
+      passwordInput.type = isPassword ? "text" : "password";
+      icon.classList.toggle("fa-eye", !isPassword);
+      icon.classList.toggle("fa-eye-slash", isPassword);
+      this.setAttribute(
+        "aria-label",
+        isPassword ? "Ocultar senha" : "Mostrar senha",
+      );
+      this.setAttribute("aria-pressed", isPassword);
+    });
+
+  document
+    .getElementById("btn-fechar-login")
+    .addEventListener("click", function () {
+      if (window.opener) {
+        window.close();
+        return;
+      }
+
+      if (document.referrer) {
+        window.history.back();
+        return;
+      }
+
+      window.location.href = "/";
+    });
+</script>
+
+{%endblock%}

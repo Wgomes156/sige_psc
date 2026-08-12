@@ -1,0 +1,176 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>PSC-SERVICE - Consultoria | Treinamentos | Logística</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{% static 'img/icon_psc.png' %}" type="image/x-icon">
+
+    <!-- Google Fonts & Icons -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=handshake" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="{% static 'libs/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+
+    <!-- bootstrap -->
+    <link href="{% static 'css/bootstrap-5/bootstrap.min.css' %}" rel="stylesheet">
+
+
+    <!-- Global CSS Stylesheets -->
+    <link rel="stylesheet" href="{% static 'css/layouts/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/layouts/header.css' %}">
+    <link rel="stylesheet" href="{% static 'css/layouts/footer.css' %}">
+
+    {% block extra_css %}{% endblock %}
+</head>
+
+<body>
+    <header>
+        <section id="header-top">
+            <p>Encarregado de Dados: dpo@grupoadaptalia.com.br</p>
+            <ul class="social-links" aria-label="Redes sociais">
+                <li><a href="http://linkedin.com/company/psc-service/" target="_blank" aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a></li>
+                <li><a href="#" aria-label="Instagram"><i class="fa fa-instagram"></i></a></li>
+                <li><a href="#" aria-label="Facebook"><i class="fa fa-facebook"></i></a></li>
+            </ul>
+        </section>
+
+        <nav class="container">
+            <section class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 link-body-emphasis text-decoration-none">
+                    <img style="width: 10em; height: 3.5em;" src="{% static 'img/logo_1.png' %}" alt="Logo PSC SERVICE">
+                </a>
+
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                    <li><a class="nav-link px-2 link-body-emphasis {% if current_page == 'index' %}active{% endif %}"
+                            href="/">Home</a></li>
+                    <li><a class="nav-link px-2 link-body-emphasis {% if current_page == 'sobre' %}active{% endif %}"
+                            href="/sobre">Sobre Nós</a></li>
+                    <li><a class="nav-link px-2 link-body-emphasis {% if current_page == 'contato' %}active{% endif %}"
+                            href="/contato">Contatos</a></li>
+                    <li><a class="nav-link px-2 link-body-emphasis {% if current_page == 'aviso' %}active{% endif %}"
+                            href="/aviso">Avisos de privacidade</a></li>
+                </ul>
+                {% if user.is_authenticated %}
+                <section class="dropdown text-end">
+                    <a class="d-block link-body-emphasis text-decoration-none dropdown-toggle" href="#"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        {% if user.foto_cadastro %}
+                            <img src="{{user.foto_cadastro.url}}" alt="mdo" width="52" class="rounded-circle">
+                            {% else %}
+                            <img src="{% static 'img/default_user.png' %}" alt="mdo" width="32" height="32" class="rounded-circle">
+                        {% endif %}
+                    </a>
+                    <ul class="dropdown-menu text-small">
+                        <li>
+                            <p class="dropdown-item">
+                                {% with user.get_full_name.split as name_parts %}
+                                {{ name_parts.0 }} {{ name_parts.1 }}
+                                {% endwith %}
+                            </p>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="/cadastros">Cadastro de usuário</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="/admin" target="_blank">Gerenciamento</a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li>
+                            <form class="dropdown-item" id="logout-form" method="post" action="/accounts/logout/">
+                                {% csrf_token %}
+                                <button style="all: unset; cursor: pointer;" type="submit">Sair</button>
+                            </form>
+                        </li>
+                    </ul>
+                </section>
+                {% else %}
+                <section class="dropdown text-end">
+                    <a href="/login" class="btn btn-outline-primary me-2"><b>Login</b></a>
+                </section>
+                {% endif %}
+            </section>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}{% endblock content %}
+    </main>
+
+    <footer>
+        <section id="footer-cta">
+            <div id="linebgoverlay"></div>
+            <div id="footer_container">
+                <h2>Junte-se a nós</h2>
+                <p>Estamos comprometidos em ser uma referência em excelência na prestação de serviços, trazendo soluções
+                    e resultados tangíveis para nossos clientes.</p>
+                <div class="footer-buttons">
+                    <a href="/contato" class="primary-button">ENTRAR EM CONTATO</a>
+                    <!-- <a href="#" class="secund-button">RECEBA DIAGNÓSTICO</a> -->
+                </div>
+            </div>
+        </section>
+
+        <section id="footer-links">
+            <div id="footer_container2">
+                <div id="logo_footer">
+                    <img src="{% static 'img/logo_2.png' %}" alt="Logo PSC SERVICE">
+                </div>
+                <div class="links-footer">
+                    <h2>Links Rápidos</h2>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/sobre">Sobre Nós</a></li>
+                        <li><a href="/servico">Serviços</a></li>
+                        <li><a href="/contato">Contato</a></li>
+                        <li><a href="/aviso">Aviso de Privacidade</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2>Contatos</h2>
+                    <ul>
+                        <li><i class="fa fa-phone"></i> <span>55 (21) 97157-3947</span></li>
+                        <li><i class="fa fa-envelope"></i> <span>psc.servicebr@gmail.com</span></li>
+                    </ul>
+                </div>
+                <div>
+                    <ul class="social-links" aria-label="Redes sociais">
+                        <li><a href="http://linkedin.com/company/psc-service/" target="_blank" aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="#" aria-label="Instagram"><i class="fa fa-instagram"></i></a></li>
+                        <li><a href="#" aria-label="Facebook"><i class="fa fa-facebook"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="footer-info">
+            <p>Raul da Cunha Ribeiro, 440/201 – Recreio dos Bandeirantes – Rio de Janeiro CEP.227-0022 / CNPJ:
+                48.117.061/0001-60</p>
+        </section>
+    </footer>
+
+    <script src="{% static 'js/bootstrap-5/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'js/jquery/jquery-3.7.1.min.js' %}"></script>
+    <script src="{% static 'js/jquery/jquery.mask.min.js' %}"></script>
+    <script src="{% static 'js/mask.js' %}"></script>
+
+    <!-- Botão Flutuante do WhatsApp -->
+    <a href="https://api.whatsapp.com/send/?phone=5521998054530&text=Bem+Vindo+a+PSC+Service%2C+envie+uma+mensagem+para+que+possamos+te+atender%21" 
+       class="whatsapp-float" 
+       target="_blank" 
+       rel="noopener noreferrer"
+       aria-label="Fale conosco no WhatsApp">
+        <i class="fa fa-whatsapp"></i>
+    </a>
+</body>
+
+</html>

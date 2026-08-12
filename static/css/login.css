@@ -1,0 +1,12 @@
+#content-banner {
+    min-height: 50vh;
+    width: 100%;
+
+    background-color: #F8E1E1;
+    background-image: url(../img/banner_1.png);
+    background-position: center left;
+    background-size: cover;
+
+    display: flex;
+    align-items: center;
+}
