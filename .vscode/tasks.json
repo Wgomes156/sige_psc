@@ -1,0 +1,60 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "🚀 Rodar SIGE PSC",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-Command",
+        "$env:DJANGO_SETTINGS_MODULE = 'sige_psc.settings_dev'; python manage.py runserver"
+      ],
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared"
+      },
+      "runOptions": {
+        "runOn": "folderOpen": false
+      }
+    },
+    {
+      "label": "🔄 Migrate Database",
+      "type": "shell",
+      "command": "python",
+      "args": [
+        "manage.py",
+        "migrate"
+      ],
+      "problemMatcher": [],
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "👤 Create Superuser",
+      "type": "shell",
+      "command": "python",
+      "args": [
+        "manage.py",
+        "createsuperuser"
+      ],
+      "problemMatcher": [],
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared"
+      }
+    }
+  ]
+}
