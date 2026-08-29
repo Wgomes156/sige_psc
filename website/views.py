@@ -9,6 +9,11 @@ from django.contrib.auth.decorators import login_required, user_passes_test
 from django.contrib import messages
 from django.core.mail import send_mail
 
+import json
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+from .laura_service import get_laura_response
+
 # Create your views here.
 def index(request):
     current_page = 'index'
@@ -26,15 +31,18 @@ def contato(request):
         email = request.POST.get("email")
         assunto = request.POST.get("assunto")
         mensagem = request.POST.get("mensagem")
-        email_empresa = os.environ["EMAIL_HOST_USER"]
-        # Validar forumário e inserir no banco de dados
+        email_empresa = "psc.servicebr@gmail.com"
+        
+        # Formata o corpo do e-mail para incluir quem enviou
+        corpo_mensagem = f"Nome: {nome}\nE-mail do remetente: {email}\n\nMensagem:\n{mensagem}"
+        
         send_mail(
-                subject=assunto,
-                message=mensagem,
-                from_email=email,  # Usa o DEFAULT_FROM_EMAIL
-                recipient_list=[email_empresa],
-                fail_silently=False,
-            )
+            subject=assunto,
+            message=corpo_mensagem,
+            from_email=None,  # None faz usar o DEFAULT_FROM_EMAIL definido no settings.py
+            recipient_list=[email_empresa],
+            fail_silently=False,
+        )
         # return render(request, "pages/contato.html", {"success": True}, {'current_page': current_page})
 
     return render(request, "pages/contato.html", {'current_page': current_page})
@@ -96,3 +104,21 @@ def create_user_adm(request):
             )
             return HttpResponse("Usuário criado com sucesso\nsenha do usuário: "+password)
     return render(request,"pages/create_user.html", {"form":form })
+
+@csrf_exempt
+def laura_chat(request):
+    if request.method == "POST":
+        try:
+            data = json.loads(request.body)
+            user_message = data.get("message", "")
+            chat_history = data.get("history", [])
+            
+            if not user_message.strip():
+                return JsonResponse({"response": "Por favor, digite alguma mensagem."})
+            
+            response_text = get_laura_response(user_message, chat_history=chat_history)
+            return JsonResponse({"response": response_text})
+        except Exception as e:
+            return JsonResponse({"response": f"Erro interno do servidor: {str(e)}"}, status=500)
+    return JsonResponse({"response": "Método não permitido"}, status=405)
+

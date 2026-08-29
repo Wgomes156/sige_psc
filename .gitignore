@@ -3,5 +3,7 @@ db.sqlite3
 __pycache__
 Foto_cadastro
 .env
+.env.production
 Documentos/
 venv/
+staticfiles/

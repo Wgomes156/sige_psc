@@ -1,0 +1,341 @@
+{% load static %}
+<!-- Widget de Chat Flutuante da Laura -->
+<div id="laura-chat-widget">
+    <!-- Botão Flutuante -->
+    <button id="laura-chat-btn" aria-label="Falar com a Laura" title="Falar com a Laura">
+        <img src="{% static 'img/laura_avatar.png' %}" alt="Laura Avatar" class="laura-btn-img">
+    </button>
+
+    <!-- Janela de Chat (Escondida por padrão) -->
+    <div id="laura-chat-window" class="hidden">
+        <div id="laura-chat-header">
+            <div class="laura-header-info">
+                <img src="{% static 'img/laura_avatar.png' %}" alt="Laura Avatar" class="laura-header-avatar">
+                <div>
+                    <h4>Laura</h4>
+                    <span class="laura-status">Assistente Virtual</span>
+                </div>
+            </div>
+            <button id="laura-close-btn" aria-label="Fechar chat">&times;</button>
+        </div>
+
+        <div id="laura-chat-messages">
+            <div class="message laura-message">
+                Olá! Eu sou a <strong>Laura</strong>, a assistente virtual da PSC Service. Como posso ajudar você hoje? 😊
+            </div>
+        </div>
+
+        <div id="laura-chat-footer">
+            <input type="text" id="laura-chat-input" placeholder="Digite sua mensagem..." aria-label="Digite sua mensagem">
+            <button id="laura-send-btn" aria-label="Enviar mensagem">
+                <svg viewBox="0 0 24 24" width="20" height="20">
+                    <path fill="currentColor" d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Estilos do Widget da Laura */
+    #laura-chat-widget {
+        position: fixed;
+        bottom: 40px; /* Alinhado horizontalmente com o WhatsApp */
+        right: 120px; /* Separado do WhatsApp (que fica em right: 40px) */
+        z-index: 9999;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    #laura-chat-btn {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background-color: #007bff;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    #laura-chat-btn:hover {
+        transform: scale(1.1);
+        background-color: #0056b3;
+    }
+
+    .laura-btn-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    #laura-chat-window {
+        position: absolute;
+        bottom: 75px;
+        right: -80px; /* Ajusta a posição da janela para abrir centralizada em relação ao botão */
+        width: 350px;
+        height: 450px;
+        background-color: white;
+        border-radius: 12px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        transition: all 0.3s ease;
+    }
+
+    #laura-chat-window.hidden {
+        display: none;
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    #laura-chat-header {
+        background-color: #007bff;
+        color: white;
+        padding: 12px 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .laura-header-info {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .laura-header-avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid rgba(255, 255, 255, 0.5);
+    }
+
+    .laura-header-info h4 {
+        margin: 0;
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    .laura-status {
+        font-size: 11px;
+        opacity: 0.8;
+    }
+
+    #laura-close-btn {
+        background: none;
+        border: none;
+        color: white;
+        font-size: 24px;
+        cursor: pointer;
+        opacity: 0.8;
+        transition: opacity 0.2s;
+    }
+
+    #laura-close-btn:hover {
+        opacity: 1;
+    }
+
+    #laura-chat-messages {
+        flex: 1;
+        padding: 15px;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        background-color: #f8f9fa;
+    }
+
+    .message {
+        padding: 10px 14px;
+        border-radius: 8px;
+        font-size: 14px;
+        max-width: 80%;
+        line-height: 1.4;
+        word-wrap: break-word;
+    }
+
+    .laura-message {
+        background-color: #ffffff;
+        align-self: flex-start;
+        border: 1px solid #dee2e6;
+        color: #333;
+    }
+
+    .user-message {
+        background-color: #007bff;
+        color: white;
+        align-self: flex-end;
+    }
+
+    .loading-message {
+        background-color: #e9ecef;
+        color: #6c757d;
+        align-self: flex-start;
+        font-style: italic;
+    }
+
+    #laura-chat-footer {
+        padding: 10px 15px;
+        border-top: 1px solid #dee2e6;
+        display: flex;
+        gap: 10px;
+        background-color: white;
+    }
+
+    #laura-chat-input {
+        flex: 1;
+        border: 1px solid #ced4da;
+        border-radius: 20px;
+        padding: 8px 15px;
+        font-size: 14px;
+        outline: none;
+        transition: border-color 0.2s;
+    }
+
+    #laura-chat-input:focus {
+        border-color: #007bff;
+    }
+
+    #laura-send-btn {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 36px;
+        height: 36px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.2s;
+    }
+
+    #laura-send-btn:hover {
+        background-color: #0056b3;
+    }
+
+    /* Responsividade móvel */
+    @media (max-width: 768px) {
+        #laura-chat-widget {
+            bottom: 20px;
+            right: 85px; /* Ajusta lado a lado no celular */
+        }
+        #laura-chat-btn {
+            width: 50px;
+            height: 50px;
+        }
+        #laura-chat-window {
+            width: calc(100vw - 40px);
+            height: 380px;
+            right: -45px; /* Centraliza a janela melhor na tela menor */
+        }
+    }
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const chatBtn = document.getElementById("laura-chat-btn");
+        const chatWindow = document.getElementById("laura-chat-window");
+        const closeBtn = document.getElementById("laura-close-btn");
+        const sendBtn = document.getElementById("laura-send-btn");
+        const chatInput = document.getElementById("laura-chat-input");
+        const chatMessages = document.getElementById("laura-chat-messages");
+
+        // Alterna abertura da janela
+        chatBtn.addEventListener("click", function () {
+            chatWindow.classList.toggle("hidden");
+            if (!chatWindow.classList.contains("hidden")) {
+                chatInput.focus();
+                scrollToBottom();
+            }
+        });
+
+        closeBtn.addEventListener("click", function () {
+            chatWindow.classList.add("hidden");
+        });
+
+        // Envia mensagem ao clicar no botão
+        sendBtn.addEventListener("click", sendUserMessage);
+
+        // Envia mensagem ao pressionar Enter
+        chatInput.addEventListener("keydown", function (e) {
+            if (e.key === "Enter") {
+                sendUserMessage();
+            }
+        });
+
+        let conversationHistory = [];
+
+        function scrollToBottom() {
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function appendMessage(text, sender) {
+            const messageDiv = document.createElement("div");
+            messageDiv.classList.add("message", sender === "user" ? "user-message" : "laura-message");
+            messageDiv.innerHTML = text.replace(/\n/g, "<br>");
+            chatMessages.appendChild(messageDiv);
+            scrollToBottom();
+            return messageDiv;
+        }
+
+        function sendUserMessage() {
+            const message = chatInput.value.trim();
+            if (!message) return;
+
+            // Limpa input
+            chatInput.value = "";
+
+            // Adiciona mensagem do usuário na tela
+            appendMessage(message, "user");
+
+            // Mensagem de "carregando/digitando"
+            const loadingDiv = document.createElement("div");
+            loadingDiv.classList.add("message", "loading-message");
+            loadingDiv.innerText = "Laura está digitando...";
+            chatMessages.appendChild(loadingDiv);
+            scrollToBottom();
+
+            // Faz a requisição para a view do Django
+            fetch("/laura/chat/", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ 
+                    message: message,
+                    history: conversationHistory 
+                })
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Erro na comunicação com o servidor.");
+                }
+                return response.json();
+            })
+            .then(data => {
+                // Remove loading
+                loadingDiv.remove();
+                
+                // Adiciona a interação atual ao histórico acumulado na memória da página
+                conversationHistory.push({ sender: "user", text: message });
+                conversationHistory.push({ sender: "model", text: data.response });
+                
+                // Adiciona resposta da Laura na tela
+                appendMessage(data.response, "laura");
+            })
+            .catch(error => {
+                loadingDiv.remove();
+                appendMessage("Desculpe, tive um problema de conexão com o servidor. 😕", "laura");
+                console.error("Erro no chat da Laura:", error);
+            });
+        }
+    });
+</script>

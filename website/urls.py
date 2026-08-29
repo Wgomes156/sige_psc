@@ -12,6 +12,7 @@ urlpatterns = [
     path("sobre", views.about),
     path("aviso", views.aviso),
     path("contato", views.contato),
+    path("laura/chat/", views.laura_chat, name="laura-chat"),
     path("accounts/", include("django.contrib.auth.urls"))
     # path("foto_usuario", views.foto_perfil),
     ] + static("Foto_cadastro", document_root="Foto_cadastro") + static ("Documentos", document_root="Documentos")
