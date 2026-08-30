@@ -84,14 +84,15 @@
 
 ## Acesso ao sistema pelo terminal
 
-# 1 - Digite os comandos para ativação da venv:
+# 1 - Digite os comandos no terminal para ativação da venv:
 (venv) PS D:\sige_psc-main> (Set-ExecutionPolicy -Scope Process -ExecutionPolicy RemoteSigned) ; (& d:\sige_psc-main\venv\Scripts\Activate.ps1)
 
 # 2 - python manage.py runserver
 
 # 3 - Como fica no terminal:
 
-# PS D:\sige_psc-main> (Set-ExecutionPolicy -Scope Process -ExecutionPolicy RemoteSigned) ; (& d:\sige_psc-main\venv\Scripts\Activate.ps1)
+# PS D:\sige_psc-main> Digitar: 
+ (Set-ExecutionPolicy -Scope Process -ExecutionPolicy RemoteSigned) ; (& d:\sige_psc-main\venv\Scripts\Activate.ps1)
 
 (venv) PS D:\sige_psc-main> python manage.py runserver
 
