@@ -141,6 +141,7 @@ A Laura é uma assistente de IA integrada ao site que conversa com os visitantes
 - Usa a **API do Google Gemini** (modelo `gemini-3.6-flash`)
 - Mantém contexto do histórico da conversa (multi-turno)
 - Possui personalidade configurável via prompt de sistema
+- Detecta a intenção de falar com um humano e exibe opções rápidas de contato (WhatsApp e E-mail) diretamente na interface do chat
 
 ### Arquivos envolvidos
 
