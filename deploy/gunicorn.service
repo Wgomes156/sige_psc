@@ -1,0 +1,19 @@
+[Unit]
+Description=Gunicorn daemon for SIGE PSC
+After=network.target
+
+[Service]
+# Mude User e Group para o usuário e grupo que você usa na sua VPS (ex: root, ubuntu, www-data)
+User=root
+Group=www-data
+# Mude WorkingDirectory para o caminho exato onde o projeto está na VPS
+WorkingDirectory=/var/www/sige_psc
+# O Gunicorn precisa ser executado a partir do ambiente virtual
+ExecStart=/var/www/sige_psc/venv/bin/gunicorn \
+          --access-logfile - \
+          --workers 3 \
+          --bind unix:/var/www/sige_psc/sige_psc.sock \
+          sige_psc.wsgi:application
+
+[Install]
+WantedBy=multi-user.target
